@@ -1,0 +1,44 @@
+name: duke-msec-bootcamp
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.12
+  - pip
+
+# Numerical Manipulation
+  - numpy
+  - scipy
+
+# Machine Learning and Statistics
+  - scikit-learn
+  - lightgbm
+  - pytorch
+
+# Notebooks and Visualization
+  - jupyter
+  - pandas
+  - matplotlib
+  - seaborn
+  - plotly
+
+# Python Style and Formatting
+  - pre-commit
+  - autopep8
+  - black
+  - flake8
+  - isort
+  - yapf
+
+# Documentation
+  - sphinx
+  - myst-parser
+  - sphinx-rtd-theme
+  - markdown-it-py
+  - linkify-it-py
+  - nbsphinx
+
+# Packages not on conda list - require pip installation
+  - pip:
+    - sphinx-book-theme
+    - python-dotenv
+    - myst-nb
