@@ -205,3 +205,236 @@ def descriptions(df: pd.DataFrame) -> pd.DataFrame:
     )
 
     return descriptions
+
+
+def calculate_cpi(df: pd.DataFrame) -> pd.DataFrame:
+    """Calculates the Consumer Price Index (CPI) for each country, year, and month.
+
+    This function assumes the data has been cleaned. We will assume equal household weights for the
+    goods, corresponding to the UNIT_OF_MEASUREMENT. This means each household purchases
+    1 liter of milk, 1 loaf of bread, and 1 carton of eggs. While simplistic, this assumption
+    provides a straightforward starting point.
+
+    According to the U.S. Bureau of Labor Statistics, the formula for the CPI is:
+    > A consumer price index (CPI) is usually calculated as a weighted average of the price change
+    of the goods and services covered by the index. The weights are meant to reflect the relative
+    importance of the goods and services as measured by their shares in the total consumption of
+    households. The weight attached to each good or service determines the impact that its price
+    change will have on the overall index. The weights should be made publicly available in the
+    interests of transparency and for the information of the users of the index.
+
+    Args:
+        df (pd.DataFrame): The cleaned price dataset.
+
+    Returns:
+        pd.DataFrame: The Consumer Price Index (CPI) for each country, year, and month.
+    """
+    # Ensure the data is sorted for consistent grouping
+    df = df.sort_values(by=[cols.COUNTRY, cols.YEAR, cols.MONTH, cols.FOOD_ITEM])
+
+    # Initialize an empty list to store CPI results
+    cpi_results = []
+
+    # Base year and month for comparison
+    base_year = 2018
+    base_month = 1
+
+    # Calculate base year prices
+    # Calculate base year basket cost
+    base_prices = df[(df[cols.YEAR] == base_year) & (df[cols.MONTH] == base_month)]
+    base_prices_grouped = (
+        base_prices.groupby(cols.COUNTRY)
+        .agg({cols.PRICE_IN_USD: "sum"})
+        .rename(columns={cols.PRICE_IN_USD: "BASE_BASKET_COST"})
+    )
+
+    # Group by Country and Year-Month
+    grouped = df.groupby([cols.COUNTRY, cols.YEAR, cols.MONTH])
+
+    for (country, year, month), group in grouped:
+        # Current basket cost
+        current_basket_cost = group[cols.PRICE_IN_USD].sum()
+
+        # Base basket cost for the current country
+        if country in base_prices_grouped.index:
+            base_basket_cost = base_prices_grouped.loc[country, "BASE_BASKET_COST"]
+        else:
+            continue  # Skip if no base basket cost is available for the country
+
+        # Calculate CPI
+        cpi = (current_basket_cost / base_basket_cost) * 100
+
+        # Append result to the list
+        cpi_results.append(
+            {"COUNTRY": country, "YEAR": year, "MONTH": month, "CPI": cpi}
+        )
+
+    # Convert results to a DataFrame
+    cpi_df = pd.DataFrame(cpi_results)
+    return cpi_df
+
+
+def calculate_cpi_average_individual_product(df: pd.DataFrame) -> pd.DataFrame:
+    """Calculates the Consumer Price Index AIP metric for each country, year, and month.
+
+    We define the Consumer Price Index Average Individual Product (CPI AIP) as the average of the
+    CPI for each individual product and then averaging these CPIs. This method allows us to
+    equally weight the price effects of each of the individual products. Unlike the traditional CPI,
+    which uses the fixed basket of goods, we had to make some assumptions about the household
+    consumption of each product. This method just shows the average price change across all products.
+
+    Args:
+        df (pd.DataFrame): The cleaned price dataset.
+
+    Returns:
+        pd.DataFrame: The Consumer Price Index Average Individual Product (CPI AIP) for each country, year, and month.
+    """
+    df = df.sort_values(by=[cols.COUNTRY, cols.YEAR, cols.MONTH, cols.FOOD_ITEM])
+
+    # Initialize an empty list to store CPI AIP results
+    cpi_aip_results = []
+
+    # Base year and month for comparison
+    base_year = 2018
+    base_month = 1
+
+    # Calculate base year prices for each food item
+    base_prices = df[(df[cols.YEAR] == base_year) & (df[cols.MONTH] == base_month)]
+    base_prices_grouped = (
+        base_prices.groupby([cols.COUNTRY, cols.FOOD_ITEM])[cols.PRICE_IN_USD]
+        .mean()
+        .reset_index()
+    )
+    base_prices_grouped = base_prices_grouped.rename(
+        columns={cols.PRICE_IN_USD: "BASE_PRICE"}
+    )
+
+    # Merge base prices with the main dataframe
+    df = df.merge(
+        base_prices_grouped,
+        on=[cols.COUNTRY, cols.FOOD_ITEM],
+        how="left",
+        suffixes=("", "_BASE"),
+    )
+
+    # Calculate CPI for each food item
+    df["CPI"] = (df[cols.PRICE_IN_USD] / df["BASE_PRICE"]) * 100
+
+    # Group by Country and Year-Month
+    grouped = df.groupby([cols.COUNTRY, cols.YEAR, cols.MONTH])
+
+    for (country, year, month), group in grouped:
+        # Average CPI for all food items in the current group
+        average_cpi = group["CPI"].mean()
+
+        # Append result to the list
+        cpi_aip_results.append(
+            {"COUNTRY": country, "YEAR": year, "MONTH": month, "CPI_AIP": average_cpi}
+        )
+
+    # Convert results to a DataFrame
+    cpi_aip_df = pd.DataFrame(cpi_aip_results)
+    return cpi_aip_df
+
+
+def calculate_cpi_product(
+    df: pd.DataFrame,
+    price_col: str = cols.PRICE_IN_USD,
+) -> pd.DataFrame:
+    """Calculates the Consumer Price Index (CPI) for each country, year, and month for each food item.
+
+    This function will calculate the CPI or price index for each individual product or food item
+    within the dataset. This function assumes that the data has been cleaned.
+
+    Args:
+        df (pd.DataFrame): The cleaned price dataset.
+        price_col (str): The column name for the price data. Optional, defaults to "PRICE_IN_USD".
+
+    Returns:
+        pd.DataFrame: The Consumer Price Index (CPI) for each country, year, and month for each food item.
+    """
+    if price_col not in df.columns:
+        raise ValueError(f"Price column {price_col} not found in DataFrame.")
+
+    df = df.sort_values(by=[cols.COUNTRY, cols.YEAR, cols.MONTH, cols.FOOD_ITEM])
+
+    # Initialize an empty list to store CPI results
+    cpi_results = []
+
+    # Base year and month for comparison
+    base_year = 2018
+    base_month = 1
+
+    # Calculate base year prices for each food item
+    base_prices = df[(df[cols.YEAR] == base_year) & (df[cols.MONTH] == base_month)]
+    base_prices_grouped = (
+        base_prices.groupby([cols.COUNTRY, cols.FOOD_ITEM])[price_col]
+        .mean()
+        .reset_index()
+    )
+    base_prices_grouped = base_prices_grouped.rename(columns={price_col: "BASE_PRICE"})
+
+    # Merge base prices with the main dataframe
+    df = df.merge(
+        base_prices_grouped,
+        on=[cols.COUNTRY, cols.FOOD_ITEM],
+        how="left",
+        suffixes=("", "_BASE"),
+    )
+
+    # Calculate CPI for each food item
+    df["CPI"] = (df[price_col] / df["BASE_PRICE"]) * 100
+
+    # Group by Country, Year-Month, and Food Item
+    grouped = df.groupby([cols.COUNTRY, cols.YEAR, cols.MONTH, cols.FOOD_ITEM])
+
+    for (country, year, month, food_item), group in grouped:
+        # Current CPI for the food item
+        cpi = group["CPI"].mean()
+
+        # Append result to the list
+        cpi_results.append(
+            {
+                "COUNTRY": country,
+                "YEAR": year,
+                "MONTH": month,
+                "FOOD_ITEM": food_item,
+                "CPI": cpi,
+            }
+        )
+
+    # Convert results to a DataFrame
+    cpi_df = pd.DataFrame(cpi_results)
+    return cpi_df
+
+
+def compare_cpi_difference(
+    cpi_product_usd: pd.DataFrame,
+    cpi_product_local: pd.DataFrame,
+) -> pd.DataFrame:
+    """Compares the CPI in USD and local currency, calculating the difference and returning the sorted values.
+
+    Args:
+        cpi_product_usd (pd.DataFrame): CPI data in USD.
+        cpi_product_local (pd.DataFrame): CPI data in local currency.
+
+    Returns:
+        pd.DataFrame: DataFrame containing the CPI differences sorted in descending order.
+    """
+    # Rename CPI columns
+    cpi_product_usd = cpi_product_usd.rename(columns={"CPI": "CPI_USD"})
+    cpi_product_local = cpi_product_local.rename(columns={"CPI": "CPI_LOCAL"})
+
+    # Merge the two dataframes on the relevant columns
+    compare_cpis = cpi_product_usd.merge(
+        cpi_product_local, on=["COUNTRY", "YEAR", "MONTH", "FOOD_ITEM"]
+    )
+
+    # Calculate the absolute difference in CPI
+    compare_cpis["CPI_DIFFERENCE"] = abs(
+        (compare_cpis.CPI_USD - compare_cpis.CPI_LOCAL) / compare_cpis.CPI_LOCAL
+    )
+
+    sorted_cpis = compare_cpis.sort_values(by="CPI_DIFFERENCE", ascending=False)
+
+    return sorted_cpis

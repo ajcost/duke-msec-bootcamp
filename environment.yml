@@ -20,6 +20,8 @@ dependencies:
   - matplotlib
   - seaborn
   - plotly
+  - pillow
+  - pdf2image
 
 # Python Style and Formatting
   - pre-commit
@@ -42,3 +44,4 @@ dependencies:
     - sphinx-book-theme
     - python-dotenv
     - myst-nb
+    - pymupdf

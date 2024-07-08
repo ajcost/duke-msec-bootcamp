@@ -7,4 +7,9 @@ The following are executed notebooks for questions in the assignment.
    :maxdepth: 2
    :caption: Exercises:
 
-   ../../notebooks/exercise_one_exploratory_data_analysis
+   exercise_one_exploratory_data_analysis
+
+.. nbsphinx:: exercise_one_exploratory_data_analysis.ipynb
+   :caption: Exercise One - Exploratory Data Analysis
+   :name: exercise_one_exploratory_data_analysis
+   :hidden:
