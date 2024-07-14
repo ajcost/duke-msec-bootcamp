@@ -8,8 +8,14 @@ The following are executed notebooks for questions in the assignment.
    :caption: Exercises:
 
    exercise_one_exploratory_data_analysis
+   exercise_two_arbitrage
 
 .. nbsphinx:: exercise_one_exploratory_data_analysis.ipynb
    :caption: Exercise One - Exploratory Data Analysis
    :name: exercise_one_exploratory_data_analysis
+   :hidden:
+
+.. nbsphinx:: exercise_two_arbitrage.ipynb
+   :caption: Exercise Two - Arbitrage
+   :name: exercise_two_arbitrage
    :hidden:
