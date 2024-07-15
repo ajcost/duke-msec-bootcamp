@@ -1,0 +1,718 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Setup Guide &#8212; Duke MSEC Code Bootcamp Assignment 0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=c8984e0b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'setup_guide';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Exercises" href="exercises.html" />
+    <link rel="prev" title="Duke University - MSEC - Coding Bootcamp Documentation - Adam J. Costarino" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Duke MSEC Code Bootcamp Assignment 0.1 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Setup Guide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="exercises.html">Exercises</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="exercise_one_exploratory_data_analysis.html">Exercise One Exploratory Data Analysis</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="exercise_two_arbitrage.html">Exercise Two - Arbitrage</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="exercise_three_investments.html">Exercise Three - Investments</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API Documentation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ajcost/duke-msec-bootcamp" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ajcost/duke-msec-bootcamp/blob/main/docs/setup_guide.md?plain=1" target="_blank"
+   class="btn btn-sm btn-source-file-button dropdown-item"
+   title="Show source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">Show source</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ajcost/duke-msec-bootcamp/edit/main/docs/setup_guide.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ajcost/duke-msec-bootcamp/issues/new?title=Issue%20on%20page%20%2Fsetup_guide.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/setup_guide.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Setup Guide</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-the-repository">Cloning the Repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment">Environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda">Anaconda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gitbash">GitBash</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration">Configuration</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-environment-varibles">Loading the environment varibles</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clearing-and-doing-a-reset">Clearing and Doing a Reset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-sphinx-documentation">Building the Sphinx Documentation</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="setup-guide">
+<h1>Setup Guide<a class="headerlink" href="#setup-guide" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>This setup guide provides instructions for setting up and configuring the project.</p>
+</section>
+<section id="cloning-the-repository">
+<h2>Cloning the Repository<a class="headerlink" href="#cloning-the-repository" title="Link to this heading">#</a></h2>
+<p>To clone the project repository, you need to have access to the GitHub repository. The repository
+URL can be found by clicking on the GitHub logo at the top of this documentation. If you don’t
+have access tothe repository, please contact one of the maintainers or administrators of the
+codebase.</p>
+<p>To clone the repository, run the following command in the terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:ajcost/duke-msec-bootcamp.git
+</pre></div>
+</div>
+<p>If you encounter an error, make sure you have set up your SSH keys correctly. Please do not use
+HTTPS to clone.</p>
+<p>GitHub website <a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">here</a>.</p>
+<p>For instructions on checking for existing keys please refer to the GitHub documentation <a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys">here</a>.
+For instructions on generating SSH keys, refer to the GitHub documentation <a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">here</a>.</p>
+</section>
+<section id="environment">
+<h2>Environment<a class="headerlink" href="#environment" title="Link to this heading">#</a></h2>
+<p>It is recommended to use a Conda environment for building the project. While it is possible
+to build the project in the base Python environment, this is not recommended as it can cause
+package conflicts and resolution issues. To ensure a smooth build process, it is recommended to
+install Miniconda and create a Conda environment using the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file located in the
+base directory of the repository.</p>
+<p>To build the environment run the following command from your terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
+</pre></div>
+</div>
+<p>The environment can then be activated using the following conda command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>duke-msec-bootcamp
+</pre></div>
+</div>
+<p>If the environment ever needs to be updated due to changes in the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> configuration
+file. The following command can be used to rebuild the <code class="docutils literal notranslate"><span class="pre">duke-msec-bootcamp</span></code> conda environment locally
+without much issues:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>duke-msec-bootcamp
+conda<span class="w"> </span>env<span class="w"> </span>update<span class="w"> </span>--file<span class="w"> </span>environment.yml<span class="w"> </span>--prune
+</pre></div>
+</div>
+<div class="a-tip-reference admonition note">
+<p class="admonition-title">Note</p>
+<p>The following guide is specific to Linux/Mac or any other Unix based operating systems. Windows
+users will need to make adjustments accordingly.</p>
+</div>
+</section>
+<section id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h2>
+<p>Windows machines can be different from Unix-based operating systems like Mac and Linux. As a result
+, a few extra steps need to be taken during the setup process. It is also important to be cautious
+when working with different terminals, as the Windows CMD prompt and Powershell may not recognize
+the Anaconda installation of Python. This guide does not provide detailed instructions, as there
+are already well-documented setup guides available. Instead, it will direct you to those resources
+for further information.</p>
+<section id="anaconda">
+<h3>Anaconda<a class="headerlink" href="#anaconda" title="Link to this heading">#</a></h3>
+<p>Anaconda is a popular distribution of the Python programming language that comes with a package
+manager and a collection of pre-installed libraries and tools. It is recommended to use Anaconda for
+managing the Python environment when working with the SWITCH-GT project.</p>
+<p>To download Anaconda, visit the official website <a class="reference external" href="https://www.anaconda.com/products/individual">here</a>
+and click on the “Download” button. Follow the installation instructions to set up Anaconda on your
+Windows machine.</p>
+<p>For detailed setup guides and documentation, you can refer to the following resources:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.anaconda.com/">Anaconda Documentation</a></p></li>
+<li><p><a class="reference external" href="https://docs.anaconda.com/anaconda/user-guide/">Anaconda User Guide</a></p></li>
+</ul>
+<p>For installation on Windows please reference:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.anaconda.com/free/anaconda/install/windows/">Anaconda Windows Setup</a></p></li>
+</ul>
+<p>These resources provide comprehensive information on how to install Anaconda, create and manage
+environments, install packages, and more.</p>
+</section>
+<section id="gitbash">
+<h3>GitBash<a class="headerlink" href="#gitbash" title="Link to this heading">#</a></h3>
+<p>GitBash is a command-line interface tool that provides a Unix-like environment on Windows machines.
+It allows users to run Git commands and execute shell scripts. GitBash is commonly used by
+developers who work with Git repositories on Windows.</p>
+<p>To download GitBash, visit the official website <a class="reference external" href="https://gitforwindows.org/">here</a> and click on the
+“Download” button. Follow the installation instructions to set up GitBash on your Windows machine.</p>
+<p>For detailed setup guides and documentation, you can refer to the following resources:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://gitforwindows.org/documentation/">GitBash Documentation</a></p></li>
+<li><p><a class="reference external" href="https://git-scm.com/doc">Git Documentation</a></p></li>
+</ul>
+<p>These resources provide comprehensive information on how to use GitBash, including command
+references, configuration options, and troubleshooting guides.</p>
+</section>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">#</a></h2>
+<p>For developers and modelers one can use their <code class="docutils literal notranslate"><span class="pre">.env</span></code> file to ensure the proper configuration of
+their environment. If this file is written correctly the connection, upload and download of data
+should be relatively automated. The user need not worry about too much memorization and
+credentialization of resources. That should be done once. The <code class="docutils literal notranslate"><span class="pre">.env</span></code> file should be located
+in the base of the repository.</p>
+<p>Your environment file should look something like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Path variables - change these to match your system</span>
+<span class="nv">REPOSITORY_PATH</span><span class="o">=</span>/path/to/repository/duke-msec-bootcamp
+<span class="nv">LOCAL_DATA_PATH</span><span class="o">=</span>/path/to/repository/duke-msec-bootcamp/data
+<span class="nv">JUPYTER_PATH</span><span class="o">=</span>/path/to/repository/duke-msec-bootcamp/notebooks
+<span class="nv">SOURCE_PATH</span><span class="o">=</span>/path/to/repository/duke-msec-bootcamp/src
+</pre></div>
+</div>
+<div class="a-tip-reference admonition attention">
+<p class="admonition-title">Attention</p>
+<p>You should never commit your <code class="docutils literal notranslate"><span class="pre">.env</span></code> file to a branch or push it to a GitHub remote repository under
+any circumstances. By default, the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file blocks this file to prevent accidental commits.
+To stage changes in the <code class="docutils literal notranslate"><span class="pre">.env</span></code> file, a force add (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-f</span></code>) is required, but this should be
+avoided since the file contains sensitive information, including access keys. The <code class="docutils literal notranslate"><span class="pre">.env</span></code> file in the
+remote repository should remain illustrative only.</p>
+</div>
+<section id="loading-the-environment-varibles">
+<h3>Loading the environment varibles<a class="headerlink" href="#loading-the-environment-varibles" title="Link to this heading">#</a></h3>
+<p>To load <code class="docutils literal notranslate"><span class="pre">.env</span></code> variables into your shell session on Unix-like systems (Linux, macOS), first make
+sure your <code class="docutils literal notranslate"><span class="pre">.env</span></code> file is correctly formatted with <code class="docutils literal notranslate"><span class="pre">KEY=VALUE</span></code> pairs on separate lines. Open a
+terminal, navigate to the directory containing the <code class="docutils literal notranslate"><span class="pre">.env</span></code> file, and execute the following commands:
+<code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">-a</span></code> to automatically export all variables, <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">.env</span></code> to load the variables, and <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">+a</span></code>
+to stop the automatic export. This sequence ensures that all variables in the <code class="docutils literal notranslate"><span class="pre">.env</span></code> file are loaded
+into the environment of your current shell session.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="w"> </span>-a
+<span class="nb">source</span><span class="w"> </span>.env
+<span class="nb">set</span><span class="w"> </span>+a
+</pre></div>
+</div>
+<p>To check if this has worked you can run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$REPOSITORY_PATH</span>
+</pre></div>
+</div>
+<p>For Windows systems, Windows does not natively support the <code class="docutils literal notranslate"><span class="pre">source</span></code> command used in Unix-like
+systems. Instead, create a batch script to load the variables. Open a text editor and write a script
+with the following content: <code class="docutils literal notranslate"><span class="pre">&#64;echo</span> <span class="pre">off</span></code> to prevent the command prompt from displaying commands,
+and <code class="docutils literal notranslate"><span class="pre">FOR</span> <span class="pre">/F</span> <span class="pre">&quot;tokens=*&quot;</span> <span class="pre">%%G</span> <span class="pre">IN</span> <span class="pre">(.env)</span> <span class="pre">DO</span> <span class="pre">SET</span> <span class="pre">%%G</span></code> to parse each line in the <code class="docutils literal notranslate"><span class="pre">.env</span></code> file and set the
+environment variables accordingly. Save this script as <code class="docutils literal notranslate"><span class="pre">load_env.bat</span></code> in the same directory as your
+<code class="docutils literal notranslate"><span class="pre">.env</span></code> file. Execute <code class="docutils literal notranslate"><span class="pre">load_env.bat</span></code> in the Command Prompt to apply the environment variables to
+your session. This method adapts the process to the Windows environment by using a batch file to
+replicate the functionality of the Unix <code class="docutils literal notranslate"><span class="pre">source</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>@echo<span class="w"> </span>off
+FOR<span class="w"> </span>/F<span class="w"> </span><span class="s2">&quot;tokens=*&quot;</span><span class="w"> </span>%%G<span class="w"> </span>IN<span class="w"> </span><span class="o">(</span>.env<span class="o">)</span><span class="w"> </span>DO<span class="w"> </span>SET<span class="w"> </span>%%G
+</pre></div>
+</div>
+<p>To check if this has worked you can run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span>%REPOSITORY_PATH%
+</pre></div>
+</div>
+</section>
+</section>
+<section id="clearing-and-doing-a-reset">
+<h2>Clearing and Doing a Reset<a class="headerlink" href="#clearing-and-doing-a-reset" title="Link to this heading">#</a></h2>
+<p>Sometimes, you may encounter package incompatibility issues, outdated packages, or other errors
+within the conda environment. In such cases, it may be necessary to rebuild the environment.
+To do this, follow these steps:</p>
+<p>Deactivate the current conda environment by running the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>deactivate
+</pre></div>
+</div>
+<p>Remove the existing conda environment by running the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>remove<span class="w"> </span>-n<span class="w"> </span>duke-msec-bootcamp<span class="w"> </span>--all
+</pre></div>
+</div>
+<p>Rebuild the environment from the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
+</pre></div>
+</div>
+</section>
+<section id="building-the-sphinx-documentation">
+<h2>Building the Sphinx Documentation<a class="headerlink" href="#building-the-sphinx-documentation" title="Link to this heading">#</a></h2>
+<p>Building the Sphinx documentation is straightforward. Enter the <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory and
+run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>clean
+make<span class="w"> </span>html
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Duke University - MSEC - Coding Bootcamp Documentation - Adam J. Costarino</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="exercises.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercises</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-the-repository">Cloning the Repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment">Environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda">Anaconda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gitbash">GitBash</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration">Configuration</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-environment-varibles">Loading the environment varibles</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clearing-and-doing-a-reset">Clearing and Doing a Reset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-sphinx-documentation">Building the Sphinx Documentation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Adam Costarino
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, by Boston Consulting Group. All rights reserved.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

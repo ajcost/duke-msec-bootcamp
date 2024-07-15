@@ -1,0 +1,667 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arbitrage &#8212; Duke MSEC Code Bootcamp Assignment 0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c8984e0b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/arbitrage';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Duke MSEC Code Bootcamp Assignment 0.1 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../setup_guide.html">Setup Guide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../exercises.html">Exercises</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../exercise_one_exploratory_data_analysis.html">Exercise One Exploratory Data Analysis</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../exercise_two_arbitrage.html">Exercise Two - Arbitrage</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../exercise_three_investments.html">Exercise Three - Investments</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api.html">API Documentation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ajcost/duke-msec-bootcamp" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ajcost/duke-msec-bootcamp/issues/new?title=Issue%20on%20page%20%2F_modules/arbitrage.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for arbitrage</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">descriptive_statistics</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<div class="viewcode-block" id="calculate_exchange_rate">
+<a class="viewcode-back" href="../api.html#arbitrage.calculate_exchange_rate">[docs]</a>
+<span class="k">def</span> <span class="nf">calculate_exchange_rate</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the exchange rate for each product, country, and year/month.</span>
+
+<span class="sd">    Assumes dataset is cleaned.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        df (pd.DataFrame): The dataframe to calculate the exchange rate for.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: The dataframe with the exchange rate calculated.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;EXCHANGE_RATE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">PRICE_IN_USD</span> <span class="o">/</span> <span class="n">df</span><span class="o">.</span><span class="n">AVERAGE_PRICE</span>
+
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+
+<div class="viewcode-block" id="check_exchange_rate">
+<a class="viewcode-back" href="../api.html#arbitrage.check_exchange_rate">[docs]</a>
+<span class="k">def</span> <span class="nf">check_exchange_rate</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Checks that during the same year and month, the exchange rate is the same for all products within a country.</span>
+
+<span class="sd">    Assumes dataset is cleaned.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        df (pd.DataFrame): The dataframe to calculate the exchange rate for.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: True if the exchange rate is the same for all products within a country, for that year and month. False otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">calculate_exchange_rate</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+    <span class="n">exchange_rate_check</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;COUNTRY&quot;</span><span class="p">,</span> <span class="s2">&quot;YEAR&quot;</span><span class="p">,</span> <span class="s2">&quot;MONTH&quot;</span><span class="p">])[</span>
+        <span class="s2">&quot;EXCHANGE_RATE&quot;</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">exchange_rate_check</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span></div>
+
+
+
+<div class="viewcode-block" id="calculate_average_exchange_rate">
+<a class="viewcode-back" href="../api.html#arbitrage.calculate_average_exchange_rate">[docs]</a>
+<span class="k">def</span> <span class="nf">calculate_average_exchange_rate</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the average exchange rate for each country.</span>
+
+<span class="sd">    Assumes dataset is cleaned.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        df (pd.DataFrame): The dataframe to calculate the exchange rate for.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: The dataframe with the average exchange rate calculated.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">calculate_exchange_rate</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;COUNTRY&quot;</span><span class="p">,</span> <span class="s2">&quot;YEAR&quot;</span><span class="p">,</span> <span class="s2">&quot;MONTH&quot;</span><span class="p">])[</span><span class="s2">&quot;EXCHANGE_RATE&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+
+<div class="viewcode-block" id="calculate_normalized_average_exchange_rate">
+<a class="viewcode-back" href="../api.html#arbitrage.calculate_normalized_average_exchange_rate">[docs]</a>
+<span class="k">def</span> <span class="nf">calculate_normalized_average_exchange_rate</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the normalized average exchange rate for each country.</span>
+
+<span class="sd">    Assumes dataset is cleaned.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        df (pd.DataFrame): The dataframe to calculate the exchange rate for.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: The dataframe with the normalized average exchange rate calculated.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">calculate_average_exchange_rate</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+    <span class="c1"># need to divide the exchange rate for each country by the max exchange rate for that country</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;NORMALIZED_EXCHANGE_RATE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;COUNTRY&quot;</span><span class="p">)[</span><span class="s2">&quot;EXCHANGE_RATE&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">/</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="c1"># subtract the mean of the normalized exchange rate for each country</span>
+    <span class="c1"># This is called mean centering</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;NORMALIZED_EXCHANGE_RATE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;COUNTRY&quot;</span><span class="p">)[</span>
+        <span class="s2">&quot;NORMALIZED_EXCHANGE_RATE&quot;</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+
+<div class="viewcode-block" id="find_all_arbitrage_opportunities">
+<a class="viewcode-back" href="../api.html#arbitrage.find_all_arbitrage_opportunities">[docs]</a>
+<span class="k">def</span> <span class="nf">find_all_arbitrage_opportunities</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Finds all arbitrage opportunities for a given year.</span>
+
+<span class="sd">    Assumes dataset is cleaned.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        df (pd.DataFrame): The dataframe to calculate the exchange rate for.</span>
+<span class="sd">        year (int): The year to find arbitrage opportunities for.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: The dataframe with the arbitrage opportunities.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">year</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">YEAR</span> <span class="o">==</span> <span class="n">year</span><span class="p">]</span>
+
+    <span class="n">select_cols</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">cols</span><span class="o">.</span><span class="n">COUNTRY</span><span class="p">,</span>
+        <span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">,</span>
+        <span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">,</span>
+        <span class="n">cols</span><span class="o">.</span><span class="n">FOOD_ITEM</span><span class="p">,</span>
+        <span class="n">cols</span><span class="o">.</span><span class="n">PRICE_IN_USD</span><span class="p">,</span>
+    <span class="p">]</span>
+
+    <span class="n">join_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">FOOD_ITEM</span><span class="p">]</span>
+
+    <span class="n">arbitrage_opportunities</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">select_cols</span><span class="p">],</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">select_cols</span><span class="p">],</span>
+        <span class="n">on</span><span class="o">=</span><span class="n">join_cols</span><span class="p">,</span>
+        <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">arbitrage_opportunities</span> <span class="o">=</span> <span class="n">arbitrage_opportunities</span><span class="p">[</span>
+        <span class="n">arbitrage_opportunities</span><span class="o">.</span><span class="n">PRICE_IN_USD_x</span> <span class="o">&lt;</span> <span class="n">arbitrage_opportunities</span><span class="o">.</span><span class="n">PRICE_IN_USD_y</span>
+    <span class="p">]</span>
+
+    <span class="c1"># rename x and y to buy and sell</span>
+    <span class="n">arbitrage_opportunities</span> <span class="o">=</span> <span class="n">arbitrage_opportunities</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+            <span class="n">cols</span><span class="o">.</span><span class="n">COUNTRY</span> <span class="o">+</span> <span class="s2">&quot;_x&quot;</span><span class="p">:</span> <span class="s2">&quot;BUY_COUNTRY&quot;</span><span class="p">,</span>
+            <span class="n">cols</span><span class="o">.</span><span class="n">COUNTRY</span> <span class="o">+</span> <span class="s2">&quot;_y&quot;</span><span class="p">:</span> <span class="s2">&quot;SELL_COUNTRY&quot;</span><span class="p">,</span>
+            <span class="n">cols</span><span class="o">.</span><span class="n">PRICE_IN_USD</span> <span class="o">+</span> <span class="s2">&quot;_x&quot;</span><span class="p">:</span> <span class="s2">&quot;BUY_PRICE&quot;</span><span class="p">,</span>
+            <span class="n">cols</span><span class="o">.</span><span class="n">PRICE_IN_USD</span> <span class="o">+</span> <span class="s2">&quot;_y&quot;</span><span class="p">:</span> <span class="s2">&quot;SELL_PRICE&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="n">arbitrage_opportunities</span><span class="p">[</span><span class="s2">&quot;PROFIT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">arbitrage_opportunities</span><span class="o">.</span><span class="n">SELL_PRICE</span> <span class="o">-</span> <span class="n">arbitrage_opportunities</span><span class="o">.</span><span class="n">BUY_PRICE</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">arbitrage_opportunities</span></div>
+
+
+
+<div class="viewcode-block" id="greatest_arbitrage_opportunities">
+<a class="viewcode-back" href="../api.html#arbitrage.greatest_arbitrage_opportunities">[docs]</a>
+<span class="k">def</span> <span class="nf">greatest_arbitrage_opportunities</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">original_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">cpi_adjusted</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Finds the greatest arbitrage opportunities for each year, month, product group.</span>
+
+<span class="sd">    If the `cpi_adjusted` parameter is set to True, the profit will be adjusted for inflation, the</span>
+<span class="sd">    original price dataframe then must be provided. If it is not provided, the function will return</span>
+<span class="sd">    an error.</span>
+
+<span class="sd">    Assumes the original dataframe is cleaned.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        df (pd.DataFrame): The dataframe that is returned from `find_all_arbitrage_opportunities`.</span>
+<span class="sd">        original_df (pd.DataFrame): The original dataframe with prices. Must be provided if `cpi_adjusted` is True.</span>
+<span class="sd">        cpi_adjusted (bool): Whether to adjust the profit for inflation.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: The dataframe with the greatest arbitrage opportunities.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">greatest_arbitrage_opportunities</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">FOOD_ITEM</span><span class="p">])[</span><span class="s2">&quot;PROFIT&quot;</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">cpi_adjusted</span><span class="p">:</span>
+        <span class="n">cpi</span> <span class="o">=</span> <span class="n">calculate_cpi</span><span class="p">(</span><span class="n">original_df</span><span class="p">)</span>
+
+        <span class="n">cpi</span> <span class="o">=</span> <span class="n">cpi</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">])[</span><span class="s2">&quot;CPI&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+        <span class="n">greatest_arbitrage_opportunities</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+            <span class="n">greatest_arbitrage_opportunities</span><span class="p">,</span>
+            <span class="n">cpi</span><span class="p">,</span>
+            <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">],</span>
+            <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">greatest_arbitrage_opportunities</span><span class="p">[</span><span class="s2">&quot;PROFIT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">greatest_arbitrage_opportunities</span><span class="p">[</span>
+            <span class="s2">&quot;PROFIT&quot;</span>
+        <span class="p">]</span> <span class="o">/</span> <span class="p">(</span>
+            <span class="n">greatest_arbitrage_opportunities</span><span class="p">[</span><span class="s2">&quot;CPI&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">100</span>
+        <span class="p">)</span>  <span class="c1"># have to divide by 100 since CPI is in percentage</span>
+
+    <span class="k">return</span> <span class="n">greatest_arbitrage_opportunities</span></div>
+
+
+
+<div class="viewcode-block" id="greatest_country_to_country_arbitrage_opportunities">
+<a class="viewcode-back" href="../api.html#arbitrage.greatest_country_to_country_arbitrage_opportunities">[docs]</a>
+<span class="k">def</span> <span class="nf">greatest_country_to_country_arbitrage_opportunities</span><span class="p">(</span>
+    <span class="n">arbitrage_opportunities</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Finds the greatest arbitrage opportunities for each country to country pair.</span>
+
+<span class="sd">    Assumes dataset is cleaned. Automatically adjusts for inflation.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        arbitrage_opportunities (pd.DataFrame): The dataframe that is returned from `find_all_arbitrage_opportunities`.</span>
+<span class="sd">        df (pd.DataFrame): The original dataframe with prices.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: The dataframe with the greatest arbitrage country to country opportunities.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">greatest_arbitrage_opportunities_df</span> <span class="o">=</span> <span class="n">greatest_arbitrage_opportunities</span><span class="p">(</span>
+        <span class="n">arbitrage_opportunities</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">cpi_adjusted</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+
+    <span class="c1"># merge CPI with artbitrage opportunities</span>
+    <span class="n">arbitrage_opportunities</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+        <span class="n">arbitrage_opportunities</span><span class="p">,</span>
+        <span class="n">greatest_arbitrage_opportunities_df</span><span class="p">[</span>
+            <span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">FOOD_ITEM</span><span class="p">,</span> <span class="s2">&quot;CPI&quot;</span><span class="p">]</span>
+        <span class="p">],</span>
+        <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">FOOD_ITEM</span><span class="p">],</span>
+        <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># calculate the profit adjusted for inflation</span>
+    <span class="n">arbitrage_opportunities</span><span class="p">[</span><span class="s2">&quot;CPI_ADJUSTED_PROFIT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">arbitrage_opportunities</span><span class="p">[</span>
+        <span class="s2">&quot;PROFIT&quot;</span>
+    <span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">arbitrage_opportunities</span><span class="p">[</span><span class="s2">&quot;CPI&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>
+
+    <span class="c1"># groupby country to country pair and find the average cpi adjusted profit</span>
+    <span class="c1"># and calculate the average percentage profit</span>
+    <span class="n">greatest_country_to_country_arbitrage_opportunities_df</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">arbitrage_opportunities</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+            <span class="p">[</span><span class="s2">&quot;BUY_COUNTRY&quot;</span><span class="p">,</span> <span class="s2">&quot;SELL_COUNTRY&quot;</span><span class="p">,</span> <span class="s2">&quot;FOOD_ITEM&quot;</span><span class="p">,</span> <span class="s2">&quot;CPI&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;CPI_ADJUSTED_PROFIT&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;BUY_PRICE&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="n">greatest_country_to_country_arbitrage_opportunities_df</span><span class="p">[</span>
+        <span class="s2">&quot;PROFIT_RATIO&quot;</span>
+    <span class="p">]</span> <span class="o">=</span> <span class="n">greatest_country_to_country_arbitrage_opportunities_df</span><span class="p">[</span>
+        <span class="s2">&quot;CPI_ADJUSTED_PROFIT&quot;</span>
+    <span class="p">]</span> <span class="o">/</span> <span class="p">(</span>
+        <span class="n">greatest_country_to_country_arbitrage_opportunities_df</span><span class="p">[</span><span class="s2">&quot;BUY_PRICE&quot;</span><span class="p">]</span>
+        <span class="o">/</span> <span class="p">(</span><span class="n">greatest_country_to_country_arbitrage_opportunities_df</span><span class="p">[</span><span class="s2">&quot;CPI&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># sort by percentage profit</span>
+    <span class="n">greatest_country_to_country_arbitrage_opportunities_df</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">greatest_country_to_country_arbitrage_opportunities_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+            <span class="p">[</span><span class="s2">&quot;BUY_COUNTRY&quot;</span><span class="p">,</span> <span class="s2">&quot;SELL_COUNTRY&quot;</span><span class="p">,</span> <span class="s2">&quot;FOOD_ITEM&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;CPI_ADJUSTED_PROFIT&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;PROFIT_RATIO&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;PROFIT_RATIO&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">greatest_country_to_country_arbitrage_opportunities_df</span></div>
+
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Adam Costarino
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, by Boston Consulting Group. All rights reserved.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

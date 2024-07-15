@@ -1,0 +1,848 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>descriptive_statistics &#8212; Duke MSEC Code Bootcamp Assignment 0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c8984e0b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/descriptive_statistics';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Duke MSEC Code Bootcamp Assignment 0.1 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../setup_guide.html">Setup Guide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../exercises.html">Exercises</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../exercise_one_exploratory_data_analysis.html">Exercise One Exploratory Data Analysis</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../exercise_two_arbitrage.html">Exercise Two - Arbitrage</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../exercise_three_investments.html">Exercise Three - Investments</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api.html">API Documentation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ajcost/duke-msec-bootcamp" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ajcost/duke-msec-bootcamp/issues/new?title=Issue%20on%20page%20%2F_modules/descriptive_statistics.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for descriptive_statistics</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+
+<div class="viewcode-block" id="price_statistics">
+<a class="viewcode-back" href="../api.html#descriptive_statistics.price_statistics">[docs]</a>
+<span class="k">def</span> <span class="nf">price_statistics</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">country</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">food</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">currency</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;For the given country, food, and currency, create a matrix of average price,</span>
+<span class="sd">    CPI between the 1st and 12th month, the greatest rolling CPI for the full year period,</span>
+<span class="sd">    the total standard deviation, and variation in price for all years.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        df (pd.DataFrame): The dataframe to use. Assumed it has been cleaned.</span>
+<span class="sd">        country (str): The country to filter by.</span>
+<span class="sd">        food (str): The food item to filter by.</span>
+<span class="sd">        currency (str): The currency to filter by, can be &quot;USD&quot; or &quot;local&quot;.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: A matrix of average price and other statistics for each year.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">currency</span> <span class="o">==</span> <span class="s2">&quot;USD&quot;</span><span class="p">:</span>
+        <span class="n">price_column</span> <span class="o">=</span> <span class="n">cols</span><span class="o">.</span><span class="n">PRICE_IN_USD</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">price_column</span> <span class="o">=</span> <span class="n">cols</span><span class="o">.</span><span class="n">AVERAGE_PRICE</span>
+
+    <span class="c1"># Filter dataframe by country and food</span>
+    <span class="n">df_filtered</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">COUNTRY</span><span class="p">]</span> <span class="o">==</span> <span class="n">country</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">FOOD_ITEM</span><span class="p">]</span> <span class="o">==</span> <span class="n">food</span><span class="p">)]</span>
+
+    <span class="c1"># Initialize list to store results</span>
+    <span class="n">results_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Group by year and calculate statistics for each year</span>
+    <span class="n">grouped</span> <span class="o">=</span> <span class="n">df_filtered</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">grouped</span><span class="p">:</span>
+        <span class="c1"># Calculate average price for the year</span>
+        <span class="n">avg_price</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="n">price_column</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+        <span class="c1"># Calculate CPI between the 1st and 12th month</span>
+        <span class="n">cpi_start</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="n">group</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">][</span><span class="n">price_column</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">cpi_end</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="n">group</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">]</span> <span class="o">==</span> <span class="mi">12</span><span class="p">][</span><span class="n">price_column</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">cpi_change</span> <span class="o">=</span> <span class="p">(</span><span class="n">cpi_end</span> <span class="o">-</span> <span class="n">cpi_start</span><span class="p">)</span> <span class="o">/</span> <span class="n">cpi_start</span> <span class="o">*</span> <span class="mi">100</span>
+
+        <span class="c1"># Calculate the greatest inter-month change</span>
+        <span class="n">group</span><span class="p">[</span><span class="s2">&quot;Price_Diff&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="n">price_column</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+        <span class="n">max_inter_month_change</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="s2">&quot;Price_Diff&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+        <span class="c1"># Calculate the greatest overall change between any two selected months</span>
+        <span class="n">max_overall_change</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
+                <span class="n">cpi_i</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="n">group</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">][</span><span class="n">price_column</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">cpi_j</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="n">group</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">]</span> <span class="o">==</span> <span class="n">j</span><span class="p">][</span><span class="n">price_column</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">overall_change</span> <span class="o">=</span> <span class="n">cpi_j</span> <span class="o">-</span> <span class="n">cpi_i</span>
+                <span class="k">if</span> <span class="n">overall_change</span> <span class="o">&gt;</span> <span class="n">max_overall_change</span><span class="p">:</span>
+                    <span class="n">max_overall_change</span> <span class="o">=</span> <span class="n">overall_change</span>
+
+        <span class="c1"># Calculate total standard deviation of price</span>
+        <span class="n">std_dev</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="n">price_column</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+        <span class="c1"># Calculate total variation of price</span>
+        <span class="n">variance</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="n">price_column</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+
+        <span class="c1"># Append results to list</span>
+        <span class="n">results_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">:</span> <span class="n">year</span><span class="p">,</span>
+                <span class="s2">&quot;AVERAGE_PRICE&quot;</span><span class="p">:</span> <span class="n">avg_price</span><span class="p">,</span>
+                <span class="s2">&quot;PERC_PRICE_CHANGE_START_YEAR_TO_END_YEAR&quot;</span><span class="p">:</span> <span class="n">cpi_change</span><span class="p">,</span>
+                <span class="s2">&quot;MAX_INTER_MONTH_PRICE_CHANGE&quot;</span><span class="p">:</span> <span class="n">max_inter_month_change</span><span class="p">,</span>
+                <span class="s2">&quot;MAX_OVERALL_PRICE_CHANGE&quot;</span><span class="p">:</span> <span class="n">max_overall_change</span><span class="p">,</span>
+                <span class="s2">&quot;PRICE_STANDARD_DEVIATION&quot;</span><span class="p">:</span> <span class="n">std_dev</span><span class="p">,</span>
+                <span class="s2">&quot;PRICE_VARIANCE&quot;</span><span class="p">:</span> <span class="n">variance</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Convert results list to DataFrame</span>
+    <span class="n">results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results_list</span><span class="p">)</span>
+
+    <span class="c1"># Set year as the index</span>
+    <span class="n">results_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">results_df</span></div>
+
+
+
+<span class="k">def</span> <span class="nf">_average_price</span><span class="p">(</span><span class="n">group</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">group</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">PRICE_IN_USD</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">_perc_price_change</span><span class="p">(</span><span class="n">group</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="n">cpi_start</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="n">group</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">][</span><span class="n">cols</span><span class="o">.</span><span class="n">PRICE_IN_USD</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">cpi_end</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="n">group</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">]</span> <span class="o">==</span> <span class="mi">12</span><span class="p">][</span><span class="n">cols</span><span class="o">.</span><span class="n">PRICE_IN_USD</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">cpi_end</span> <span class="o">-</span> <span class="n">cpi_start</span><span class="p">)</span> <span class="o">/</span> <span class="n">cpi_start</span> <span class="o">*</span> <span class="mi">100</span>
+
+
+<span class="k">def</span> <span class="nf">_max_inter_month_price_change</span><span class="p">(</span><span class="n">group</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="n">group</span><span class="p">[</span><span class="s2">&quot;Price_Diff&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">PRICE_IN_USD</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">group</span><span class="p">[</span><span class="s2">&quot;Price_Diff&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">_max_overall_price_change</span><span class="p">(</span><span class="n">group</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="n">max_overall_change</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
+            <span class="n">cpi_i</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="n">group</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">][</span><span class="n">cols</span><span class="o">.</span><span class="n">PRICE_IN_USD</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">cpi_j</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="n">group</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">]</span> <span class="o">==</span> <span class="n">j</span><span class="p">][</span><span class="n">cols</span><span class="o">.</span><span class="n">PRICE_IN_USD</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">overall_change</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">cpi_j</span> <span class="o">-</span> <span class="n">cpi_i</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">overall_change</span> <span class="o">&gt;</span> <span class="n">max_overall_change</span><span class="p">:</span>
+                <span class="n">max_overall_change</span> <span class="o">=</span> <span class="n">overall_change</span>
+    <span class="k">return</span> <span class="n">max_overall_change</span>
+
+
+<span class="k">def</span> <span class="nf">_price_standard_deviation</span><span class="p">(</span><span class="n">group</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">group</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">PRICE_IN_USD</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">_price_variance</span><span class="p">(</span><span class="n">group</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">group</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">PRICE_IN_USD</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">_calculate_statistic</span><span class="p">(</span><span class="n">group</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">statistic</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">statistic</span> <span class="o">==</span> <span class="s2">&quot;AVERAGE_PRICE&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_average_price</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">statistic</span> <span class="o">==</span> <span class="s2">&quot;PERC_PRICE_CHANGE_START_YEAR_TO_END_YEAR&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_perc_price_change</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">statistic</span> <span class="o">==</span> <span class="s2">&quot;MAX_INTER_MONTH_PRICE_CHANGE&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_max_inter_month_price_change</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">statistic</span> <span class="o">==</span> <span class="s2">&quot;MAX_OVERALL_PRICE_CHANGE&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_max_overall_price_change</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">statistic</span> <span class="o">==</span> <span class="s2">&quot;PRICE_STANDARD_DEVIATION&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_price_standard_deviation</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">statistic</span> <span class="o">==</span> <span class="s2">&quot;PRICE_VARIANCE&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_price_variance</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported statistic: </span><span class="si">{</span><span class="n">statistic</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="inter_country_price_statistic_table">
+<a class="viewcode-back" href="../api.html#descriptive_statistics.inter_country_price_statistic_table">[docs]</a>
+<span class="k">def</span> <span class="nf">inter_country_price_statistic_table</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">food_item</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">statistic</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a table for a given food item and statistic, comparing the statistic across all countries, and years.</span>
+
+<span class="sd">    The statistic should be one of the following: &quot;AVERAGE_PRICE&quot;, &quot;PERC_PRICE_CHANGE_START_YEAR_TO_END_YEAR&quot;,</span>
+<span class="sd">    &quot;MAX_INTER_MONTH_PRICE_CHANGE&quot;, &quot;MAX_OVERALL_PRICE_CHANGE&quot;, &quot;PRICE_STANDARD_DEVIATION&quot;,</span>
+<span class="sd">    &quot;PRICE_VARIANCE&quot;.</span>
+
+<span class="sd">    This function assumes the data has been cleaned.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        food_item (str): The food item to filter by.</span>
+<span class="sd">        statistic (str): The statistic to compare across countries and years.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">df_filtered</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">FOOD_ITEM</span><span class="p">]</span> <span class="o">==</span> <span class="n">food_item</span><span class="p">]</span>
+    <span class="n">results_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">grouped</span> <span class="o">=</span> <span class="n">df_filtered</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">cols</span><span class="o">.</span><span class="n">COUNTRY</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">])</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">year</span><span class="p">),</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">grouped</span><span class="p">:</span>
+        <span class="n">statistic_value</span> <span class="o">=</span> <span class="n">_calculate_statistic</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">statistic</span><span class="p">)</span>
+        <span class="n">results_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="n">cols</span><span class="o">.</span><span class="n">COUNTRY</span><span class="p">:</span> <span class="n">country</span><span class="p">,</span>
+                <span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">:</span> <span class="n">year</span><span class="p">,</span>
+                <span class="n">statistic</span><span class="p">:</span> <span class="n">statistic_value</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+
+    <span class="n">results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results_list</span><span class="p">)</span>
+    <span class="n">results_pivot</span> <span class="o">=</span> <span class="n">results_df</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span>
+        <span class="n">index</span><span class="o">=</span><span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">,</span>
+        <span class="n">columns</span><span class="o">=</span><span class="n">cols</span><span class="o">.</span><span class="n">COUNTRY</span><span class="p">,</span>
+        <span class="n">values</span><span class="o">=</span><span class="n">statistic</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Calculate the average value for each year across all countries and months</span>
+    <span class="n">yearly_averages</span> <span class="o">=</span> <span class="n">df_filtered</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">)[</span><span class="n">cols</span><span class="o">.</span><span class="n">PRICE_IN_USD</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">results_pivot</span><span class="p">[</span><span class="s2">&quot;Average&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">yearly_averages</span>
+
+    <span class="k">return</span> <span class="n">results_pivot</span></div>
+
+
+
+<div class="viewcode-block" id="descriptions">
+<a class="viewcode-back" href="../api.html#descriptive_statistics.descriptions">[docs]</a>
+<span class="k">def</span> <span class="nf">descriptions</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Builds a description of the dataset using pandas describe function.</span>
+
+<span class="sd">    First the unnecessary columns are removed and then the describe function is called.</span>
+<span class="sd">    The dataframe is grouped by country year and food item. The returned df</span>
+<span class="sd">    can be indexed by column and by row using the .loc method.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        df (pd.DataFrame): The dataframe to describe.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: The description of the dataset.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">descriptions</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">AVAILABILITY</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">cols</span><span class="o">.</span><span class="n">COUNTRY</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">FOOD_ITEM</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">])</span>
+        <span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">descriptions</span></div>
+
+
+
+<div class="viewcode-block" id="calculate_cpi">
+<a class="viewcode-back" href="../api.html#descriptive_statistics.calculate_cpi">[docs]</a>
+<span class="k">def</span> <span class="nf">calculate_cpi</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculates the Consumer Price Index (CPI) for each country, year, and month.</span>
+
+<span class="sd">    This function assumes the data has been cleaned. We will assume equal household weights for the</span>
+<span class="sd">    goods, corresponding to the UNIT_OF_MEASUREMENT. This means each household purchases</span>
+<span class="sd">    1 liter of milk, 1 loaf of bread, and 1 carton of eggs. While simplistic, this assumption</span>
+<span class="sd">    provides a straightforward starting point.</span>
+
+<span class="sd">    According to the U.S. Bureau of Labor Statistics, the formula for the CPI is:</span>
+<span class="sd">    &gt; A consumer price index (CPI) is usually calculated as a weighted average of the price change</span>
+<span class="sd">    of the goods and services covered by the index. The weights are meant to reflect the relative</span>
+<span class="sd">    importance of the goods and services as measured by their shares in the total consumption of</span>
+<span class="sd">    households. The weight attached to each good or service determines the impact that its price</span>
+<span class="sd">    change will have on the overall index. The weights should be made publicly available in the</span>
+<span class="sd">    interests of transparency and for the information of the users of the index.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        df (pd.DataFrame): The cleaned price dataset.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: The Consumer Price Index (CPI) for each country, year, and month.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Ensure the data is sorted for consistent grouping</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">COUNTRY</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">FOOD_ITEM</span><span class="p">])</span>
+
+    <span class="c1"># Initialize an empty list to store CPI results</span>
+    <span class="n">cpi_results</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Base year and month for comparison</span>
+    <span class="n">base_year</span> <span class="o">=</span> <span class="mi">2018</span>
+    <span class="n">base_month</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="c1"># Calculate base year prices</span>
+    <span class="c1"># Calculate base year basket cost</span>
+    <span class="n">base_prices</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">]</span> <span class="o">==</span> <span class="n">base_year</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">]</span> <span class="o">==</span> <span class="n">base_month</span><span class="p">)]</span>
+    <span class="n">base_prices_grouped</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">base_prices</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">cols</span><span class="o">.</span><span class="n">COUNTRY</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="n">cols</span><span class="o">.</span><span class="n">PRICE_IN_USD</span><span class="p">:</span> <span class="s2">&quot;sum&quot;</span><span class="p">})</span>
+        <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="n">cols</span><span class="o">.</span><span class="n">PRICE_IN_USD</span><span class="p">:</span> <span class="s2">&quot;BASE_BASKET_COST&quot;</span><span class="p">})</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Group by Country and Year-Month</span>
+    <span class="n">grouped</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">cols</span><span class="o">.</span><span class="n">COUNTRY</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">])</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">),</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">grouped</span><span class="p">:</span>
+        <span class="c1"># Current basket cost</span>
+        <span class="n">current_basket_cost</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">PRICE_IN_USD</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+        <span class="c1"># Base basket cost for the current country</span>
+        <span class="k">if</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">base_prices_grouped</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+            <span class="n">base_basket_cost</span> <span class="o">=</span> <span class="n">base_prices_grouped</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">country</span><span class="p">,</span> <span class="s2">&quot;BASE_BASKET_COST&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">continue</span>  <span class="c1"># Skip if no base basket cost is available for the country</span>
+
+        <span class="c1"># Calculate CPI</span>
+        <span class="n">cpi</span> <span class="o">=</span> <span class="p">(</span><span class="n">current_basket_cost</span> <span class="o">/</span> <span class="n">base_basket_cost</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+
+        <span class="c1"># Append result to the list</span>
+        <span class="n">cpi_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span><span class="s2">&quot;COUNTRY&quot;</span><span class="p">:</span> <span class="n">country</span><span class="p">,</span> <span class="s2">&quot;YEAR&quot;</span><span class="p">:</span> <span class="n">year</span><span class="p">,</span> <span class="s2">&quot;MONTH&quot;</span><span class="p">:</span> <span class="n">month</span><span class="p">,</span> <span class="s2">&quot;CPI&quot;</span><span class="p">:</span> <span class="n">cpi</span><span class="p">}</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Convert results to a DataFrame</span>
+    <span class="n">cpi_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cpi_results</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cpi_df</span></div>
+
+
+
+<div class="viewcode-block" id="calculate_cpi_average_individual_product">
+<a class="viewcode-back" href="../api.html#descriptive_statistics.calculate_cpi_average_individual_product">[docs]</a>
+<span class="k">def</span> <span class="nf">calculate_cpi_average_individual_product</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculates the Consumer Price Index AIP metric for each country, year, and month.</span>
+
+<span class="sd">    We define the Consumer Price Index Average Individual Product (CPI AIP) as the average of the</span>
+<span class="sd">    CPI for each individual product and then averaging these CPIs. This method allows us to</span>
+<span class="sd">    equally weight the price effects of each of the individual products. Unlike the traditional CPI,</span>
+<span class="sd">    which uses the fixed basket of goods, we had to make some assumptions about the household</span>
+<span class="sd">    consumption of each product. This method just shows the average price change across all products.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        df (pd.DataFrame): The cleaned price dataset.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: The Consumer Price Index Average Individual Product (CPI AIP) for each country, year, and month.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">COUNTRY</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">FOOD_ITEM</span><span class="p">])</span>
+
+    <span class="c1"># Initialize an empty list to store CPI AIP results</span>
+    <span class="n">cpi_aip_results</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Base year and month for comparison</span>
+    <span class="n">base_year</span> <span class="o">=</span> <span class="mi">2018</span>
+    <span class="n">base_month</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="c1"># Calculate base year prices for each food item</span>
+    <span class="n">base_prices</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">]</span> <span class="o">==</span> <span class="n">base_year</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">]</span> <span class="o">==</span> <span class="n">base_month</span><span class="p">)]</span>
+    <span class="n">base_prices_grouped</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">base_prices</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">cols</span><span class="o">.</span><span class="n">COUNTRY</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">FOOD_ITEM</span><span class="p">])[</span><span class="n">cols</span><span class="o">.</span><span class="n">PRICE_IN_USD</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="p">)</span>
+    <span class="n">base_prices_grouped</span> <span class="o">=</span> <span class="n">base_prices_grouped</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="n">cols</span><span class="o">.</span><span class="n">PRICE_IN_USD</span><span class="p">:</span> <span class="s2">&quot;BASE_PRICE&quot;</span><span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Merge base prices with the main dataframe</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+        <span class="n">base_prices_grouped</span><span class="p">,</span>
+        <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">COUNTRY</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">FOOD_ITEM</span><span class="p">],</span>
+        <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+        <span class="n">suffixes</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;_BASE&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Calculate CPI for each food item</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;CPI&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">PRICE_IN_USD</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;BASE_PRICE&quot;</span><span class="p">])</span> <span class="o">*</span> <span class="mi">100</span>
+
+    <span class="c1"># Group by Country and Year-Month</span>
+    <span class="n">grouped</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">cols</span><span class="o">.</span><span class="n">COUNTRY</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">])</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">),</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">grouped</span><span class="p">:</span>
+        <span class="c1"># Average CPI for all food items in the current group</span>
+        <span class="n">average_cpi</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="s2">&quot;CPI&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+        <span class="c1"># Append result to the list</span>
+        <span class="n">cpi_aip_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span><span class="s2">&quot;COUNTRY&quot;</span><span class="p">:</span> <span class="n">country</span><span class="p">,</span> <span class="s2">&quot;YEAR&quot;</span><span class="p">:</span> <span class="n">year</span><span class="p">,</span> <span class="s2">&quot;MONTH&quot;</span><span class="p">:</span> <span class="n">month</span><span class="p">,</span> <span class="s2">&quot;CPI_AIP&quot;</span><span class="p">:</span> <span class="n">average_cpi</span><span class="p">}</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Convert results to a DataFrame</span>
+    <span class="n">cpi_aip_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cpi_aip_results</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cpi_aip_df</span></div>
+
+
+
+<div class="viewcode-block" id="calculate_cpi_product">
+<a class="viewcode-back" href="../api.html#descriptive_statistics.calculate_cpi_product">[docs]</a>
+<span class="k">def</span> <span class="nf">calculate_cpi_product</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">price_col</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">cols</span><span class="o">.</span><span class="n">PRICE_IN_USD</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculates the Consumer Price Index (CPI) for each country, year, and month for each food item.</span>
+
+<span class="sd">    This function will calculate the CPI or price index for each individual product or food item</span>
+<span class="sd">    within the dataset. This function assumes that the data has been cleaned.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        df (pd.DataFrame): The cleaned price dataset.</span>
+<span class="sd">        price_col (str): The column name for the price data. Optional, defaults to &quot;PRICE_IN_USD&quot;.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: The Consumer Price Index (CPI) for each country, year, and month for each food item.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">price_col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Price column </span><span class="si">{</span><span class="n">price_col</span><span class="si">}</span><span class="s2"> not found in DataFrame.&quot;</span><span class="p">)</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">COUNTRY</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">FOOD_ITEM</span><span class="p">])</span>
+
+    <span class="c1"># Initialize an empty list to store CPI results</span>
+    <span class="n">cpi_results</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Base year and month for comparison</span>
+    <span class="n">base_year</span> <span class="o">=</span> <span class="mi">2018</span>
+    <span class="n">base_month</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="c1"># Calculate base year prices for each food item</span>
+    <span class="n">base_prices</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">]</span> <span class="o">==</span> <span class="n">base_year</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">]</span> <span class="o">==</span> <span class="n">base_month</span><span class="p">)]</span>
+    <span class="n">base_prices_grouped</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">base_prices</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">cols</span><span class="o">.</span><span class="n">COUNTRY</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">FOOD_ITEM</span><span class="p">])[</span><span class="n">price_col</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="p">)</span>
+    <span class="n">base_prices_grouped</span> <span class="o">=</span> <span class="n">base_prices_grouped</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="n">price_col</span><span class="p">:</span> <span class="s2">&quot;BASE_PRICE&quot;</span><span class="p">})</span>
+
+    <span class="c1"># Merge base prices with the main dataframe</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+        <span class="n">base_prices_grouped</span><span class="p">,</span>
+        <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="n">cols</span><span class="o">.</span><span class="n">COUNTRY</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">FOOD_ITEM</span><span class="p">],</span>
+        <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+        <span class="n">suffixes</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;_BASE&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Calculate CPI for each food item</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;CPI&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">price_col</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;BASE_PRICE&quot;</span><span class="p">])</span> <span class="o">*</span> <span class="mi">100</span>
+
+    <span class="c1"># Group by Country, Year-Month, and Food Item</span>
+    <span class="n">grouped</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">cols</span><span class="o">.</span><span class="n">COUNTRY</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">YEAR</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">MONTH</span><span class="p">,</span> <span class="n">cols</span><span class="o">.</span><span class="n">FOOD_ITEM</span><span class="p">])</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">food_item</span><span class="p">),</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">grouped</span><span class="p">:</span>
+        <span class="c1"># Current CPI for the food item</span>
+        <span class="n">cpi</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="s2">&quot;CPI&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+        <span class="c1"># Append result to the list</span>
+        <span class="n">cpi_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;COUNTRY&quot;</span><span class="p">:</span> <span class="n">country</span><span class="p">,</span>
+                <span class="s2">&quot;YEAR&quot;</span><span class="p">:</span> <span class="n">year</span><span class="p">,</span>
+                <span class="s2">&quot;MONTH&quot;</span><span class="p">:</span> <span class="n">month</span><span class="p">,</span>
+                <span class="s2">&quot;FOOD_ITEM&quot;</span><span class="p">:</span> <span class="n">food_item</span><span class="p">,</span>
+                <span class="s2">&quot;CPI&quot;</span><span class="p">:</span> <span class="n">cpi</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Convert results to a DataFrame</span>
+    <span class="n">cpi_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cpi_results</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cpi_df</span></div>
+
+
+
+<div class="viewcode-block" id="compare_cpi_difference">
+<a class="viewcode-back" href="../api.html#descriptive_statistics.compare_cpi_difference">[docs]</a>
+<span class="k">def</span> <span class="nf">compare_cpi_difference</span><span class="p">(</span>
+    <span class="n">cpi_product_usd</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">cpi_product_local</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compares the CPI in USD and local currency, calculating the difference and returning the sorted values.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        cpi_product_usd (pd.DataFrame): CPI data in USD.</span>
+<span class="sd">        cpi_product_local (pd.DataFrame): CPI data in local currency.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: DataFrame containing the CPI differences sorted in descending order.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Rename CPI columns</span>
+    <span class="n">cpi_product_usd</span> <span class="o">=</span> <span class="n">cpi_product_usd</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;CPI&quot;</span><span class="p">:</span> <span class="s2">&quot;CPI_USD&quot;</span><span class="p">})</span>
+    <span class="n">cpi_product_local</span> <span class="o">=</span> <span class="n">cpi_product_local</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;CPI&quot;</span><span class="p">:</span> <span class="s2">&quot;CPI_LOCAL&quot;</span><span class="p">})</span>
+
+    <span class="c1"># Merge the two dataframes on the relevant columns</span>
+    <span class="n">compare_cpis</span> <span class="o">=</span> <span class="n">cpi_product_usd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+        <span class="n">cpi_product_local</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;COUNTRY&quot;</span><span class="p">,</span> <span class="s2">&quot;YEAR&quot;</span><span class="p">,</span> <span class="s2">&quot;MONTH&quot;</span><span class="p">,</span> <span class="s2">&quot;FOOD_ITEM&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Calculate the absolute difference in CPI</span>
+    <span class="n">compare_cpis</span><span class="p">[</span><span class="s2">&quot;CPI_DIFFERENCE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">compare_cpis</span><span class="o">.</span><span class="n">CPI_USD</span> <span class="o">-</span> <span class="n">compare_cpis</span><span class="o">.</span><span class="n">CPI_LOCAL</span><span class="p">)</span> <span class="o">/</span> <span class="n">compare_cpis</span><span class="o">.</span><span class="n">CPI_LOCAL</span>
+    <span class="p">)</span>
+
+    <span class="n">sorted_cpis</span> <span class="o">=</span> <span class="n">compare_cpis</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;CPI_DIFFERENCE&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sorted_cpis</span></div>
+
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Adam Costarino
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, by Boston Consulting Group. All rights reserved.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
