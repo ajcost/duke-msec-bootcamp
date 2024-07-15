@@ -1,2 +1,3 @@
 # duke-msec-bootcamp
-Repository with bootcamp exercises on Vital Foods dataset
+
+Please visit official site: 
