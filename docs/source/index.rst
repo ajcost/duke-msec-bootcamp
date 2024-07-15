@@ -16,6 +16,8 @@ Insert a brief description of the project here.s
    exercises
    api
    notebooks/exercise_one_exploratory_data_analysis
+   notebooks/exercise_two_arbitrage
+   notebooks/exercise_three_investments
 
 
 Indices and tables

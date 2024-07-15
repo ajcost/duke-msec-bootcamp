@@ -3,7 +3,6 @@ API Documentation
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
 utils
 ----------------------
@@ -25,6 +24,20 @@ graphing
 ----------------------
 
 .. automodule:: graphing
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+arbitrage
+----------------------
+.. automodule:: arbitrage
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+investments
+----------------------
+.. automodule:: investments
     :members:
     :undoc-members:
     :show-inheritance:
