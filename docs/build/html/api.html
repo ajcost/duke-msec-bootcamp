@@ -1,0 +1,1712 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>API Documentation &#8212; Duke MSEC Code Bootcamp Assignment 0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=c8984e0b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Exercise Two - Arbitrage" href="exercise_two_arbitrage.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Duke MSEC Code Bootcamp Assignment 0.1 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="setup_guide.html">Setup Guide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="exercises.html">Exercises</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="exercise_one_exploratory_data_analysis.html">Initial View of Dataset</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="exercise_two_arbitrage.html">Exercise Two - Arbitrage</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">API Documentation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ajcost/duke-msec-bootcamp" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ajcost/duke-msec-bootcamp/blob/main/docs/api.rst?plain=1" target="_blank"
+   class="btn btn-sm btn-source-file-button dropdown-item"
+   title="Show source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">Show source</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ajcost/duke-msec-bootcamp/edit/main/docs/api.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ajcost/duke-msec-bootcamp/issues/new?title=Issue%20on%20page%20%2Fapi.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/api.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>API Documentation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-utils">utils</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.AVAILABILITY"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.AVAILABILITY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.AVERAGE_PRICE"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.AVERAGE_PRICE</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.COUNTRY"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.COUNTRY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.CURRENCY"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.CURRENCY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.FOOD_ITEM"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.FOOD_ITEM</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.MONTH"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.MONTH</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.PRICE_IN_USD"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.PRICE_IN_USD</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.QUALITY"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.QUALITY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.UNIT_OF_MEASURMENT"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.UNIT_OF_MEASURMENT</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.YEAR"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.YEAR</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.categorical_columns"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.categorical_columns</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.columns"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.columns</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.numerical_columns"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.numerical_columns</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme"><code class="docutils literal notranslate"><span class="pre">Theme</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.ACCENT_GRAY"><code class="docutils literal notranslate"><span class="pre">Theme.ACCENT_GRAY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.ACCENT_GRAY_DARKER_25"><code class="docutils literal notranslate"><span class="pre">Theme.ACCENT_GRAY_DARKER_25</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.ACCENT_GRAY_DARKER_50"><code class="docutils literal notranslate"><span class="pre">Theme.ACCENT_GRAY_DARKER_50</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.ACCENT_GRAY_LIGHTER_40"><code class="docutils literal notranslate"><span class="pre">Theme.ACCENT_GRAY_LIGHTER_40</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.ACCENT_GRAY_LIGHTER_60"><code class="docutils literal notranslate"><span class="pre">Theme.ACCENT_GRAY_LIGHTER_60</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.ACCENT_GRAY_LIGHTER_80"><code class="docutils literal notranslate"><span class="pre">Theme.ACCENT_GRAY_LIGHTER_80</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.BACKGROUND_WHITE"><code class="docutils literal notranslate"><span class="pre">Theme.BACKGROUND_WHITE</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.BACKGROUND_WHITE_DARKER_15"><code class="docutils literal notranslate"><span class="pre">Theme.BACKGROUND_WHITE_DARKER_15</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.BACKGROUND_WHITE_DARKER_25"><code class="docutils literal notranslate"><span class="pre">Theme.BACKGROUND_WHITE_DARKER_25</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.BACKGROUND_WHITE_DARKER_35"><code class="docutils literal notranslate"><span class="pre">Theme.BACKGROUND_WHITE_DARKER_35</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.BACKGROUND_WHITE_DARKER_5"><code class="docutils literal notranslate"><span class="pre">Theme.BACKGROUND_WHITE_DARKER_5</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.BACKGROUND_WHITE_DARKER_50"><code class="docutils literal notranslate"><span class="pre">Theme.BACKGROUND_WHITE_DARKER_50</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_GRAY"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_GRAY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_GRAY_DARKER_25"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_GRAY_DARKER_25</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_GRAY_DARKER_50"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_GRAY_DARKER_50</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_GRAY_LIGHTER_40"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_GRAY_LIGHTER_40</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_GRAY_LIGHTER_60"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_GRAY_LIGHTER_60</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_GRAY_LIGHTER_80"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_GRAY_LIGHTER_80</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_TEAL"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_TEAL</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_TEAL_DARKER_25"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_TEAL_DARKER_25</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_TEAL_DARKER_50"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_TEAL_DARKER_50</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_TEAL_LIGHTER_40"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_TEAL_LIGHTER_40</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_TEAL_LIGHTER_60"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_TEAL_LIGHTER_60</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_TEAL_LIGHTER_80"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_TEAL_LIGHTER_80</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.FONT_PRIMARY"><code class="docutils literal notranslate"><span class="pre">Theme.FONT_PRIMARY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.FONT_SECONDARY"><code class="docutils literal notranslate"><span class="pre">Theme.FONT_SECONDARY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.GREEN"><code class="docutils literal notranslate"><span class="pre">Theme.GREEN</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.GREEN_DARKER_25"><code class="docutils literal notranslate"><span class="pre">Theme.GREEN_DARKER_25</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.GREEN_DARKER_50"><code class="docutils literal notranslate"><span class="pre">Theme.GREEN_DARKER_50</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.GREEN_LIGHTER_40"><code class="docutils literal notranslate"><span class="pre">Theme.GREEN_LIGHTER_40</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.GREEN_LIGHTER_60"><code class="docutils literal notranslate"><span class="pre">Theme.GREEN_LIGHTER_60</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.GREEN_LIGHTER_80"><code class="docutils literal notranslate"><span class="pre">Theme.GREEN_LIGHTER_80</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TEAL"><code class="docutils literal notranslate"><span class="pre">Theme.TEAL</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TEAL_DARKER_25"><code class="docutils literal notranslate"><span class="pre">Theme.TEAL_DARKER_25</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TEAL_DARKER_50"><code class="docutils literal notranslate"><span class="pre">Theme.TEAL_DARKER_50</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TEAL_LIGHTER_40"><code class="docutils literal notranslate"><span class="pre">Theme.TEAL_LIGHTER_40</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TEAL_LIGHTER_60"><code class="docutils literal notranslate"><span class="pre">Theme.TEAL_LIGHTER_60</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TEAL_LIGHTER_80"><code class="docutils literal notranslate"><span class="pre">Theme.TEAL_LIGHTER_80</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TRANSPARENT"><code class="docutils literal notranslate"><span class="pre">Theme.TRANSPARENT</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TURQUOISE"><code class="docutils literal notranslate"><span class="pre">Theme.TURQUOISE</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TURQUOISE_DARKER_25"><code class="docutils literal notranslate"><span class="pre">Theme.TURQUOISE_DARKER_25</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TURQUOISE_DARKER_50"><code class="docutils literal notranslate"><span class="pre">Theme.TURQUOISE_DARKER_50</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TURQUOISE_LIGHTER_40"><code class="docutils literal notranslate"><span class="pre">Theme.TURQUOISE_LIGHTER_40</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TURQUOISE_LIGHTER_60"><code class="docutils literal notranslate"><span class="pre">Theme.TURQUOISE_LIGHTER_60</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TURQUOISE_LIGHTER_80"><code class="docutils literal notranslate"><span class="pre">Theme.TURQUOISE_LIGHTER_80</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.YELLOW"><code class="docutils literal notranslate"><span class="pre">Theme.YELLOW</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.YELLOW_DARKER_25"><code class="docutils literal notranslate"><span class="pre">Theme.YELLOW_DARKER_25</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.YELLOW_DARKER_50"><code class="docutils literal notranslate"><span class="pre">Theme.YELLOW_DARKER_50</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.YELLOW_LIGHTER_40"><code class="docutils literal notranslate"><span class="pre">Theme.YELLOW_LIGHTER_40</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.YELLOW_LIGHTER_60"><code class="docutils literal notranslate"><span class="pre">Theme.YELLOW_LIGHTER_60</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.YELLOW_LIGHTER_80"><code class="docutils literal notranslate"><span class="pre">Theme.YELLOW_LIGHTER_80</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.generate_colorscale"><code class="docutils literal notranslate"><span class="pre">Theme.generate_colorscale()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.clean_data"><code class="docutils literal notranslate"><span class="pre">clean_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.load_env"><code class="docutils literal notranslate"><span class="pre">load_env()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.load_variables"><code class="docutils literal notranslate"><span class="pre">load_variables()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-descriptive_statistics">descriptive_statistics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive_statistics.calculate_cpi"><code class="docutils literal notranslate"><span class="pre">calculate_cpi()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive_statistics.calculate_cpi_average_individual_product"><code class="docutils literal notranslate"><span class="pre">calculate_cpi_average_individual_product()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive_statistics.calculate_cpi_product"><code class="docutils literal notranslate"><span class="pre">calculate_cpi_product()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive_statistics.compare_cpi_difference"><code class="docutils literal notranslate"><span class="pre">compare_cpi_difference()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive_statistics.descriptions"><code class="docutils literal notranslate"><span class="pre">descriptions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive_statistics.inter_country_price_statistic_table"><code class="docutils literal notranslate"><span class="pre">inter_country_price_statistic_table()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive_statistics.price_statistics"><code class="docutils literal notranslate"><span class="pre">price_statistics()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-graphing">graphing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphing.inter_country_price_heatmaps"><code class="docutils literal notranslate"><span class="pre">inter_country_price_heatmaps()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-arbitrage">arbitrage</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrage.calculate_average_exchange_rate"><code class="docutils literal notranslate"><span class="pre">calculate_average_exchange_rate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrage.calculate_exchange_rate"><code class="docutils literal notranslate"><span class="pre">calculate_exchange_rate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrage.calculate_normalized_average_exchange_rate"><code class="docutils literal notranslate"><span class="pre">calculate_normalized_average_exchange_rate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrage.check_exchange_rate"><code class="docutils literal notranslate"><span class="pre">check_exchange_rate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrage.find_all_arbitrage_opportunities"><code class="docutils literal notranslate"><span class="pre">find_all_arbitrage_opportunities()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrage.greatest_arbitrage_opportunities"><code class="docutils literal notranslate"><span class="pre">greatest_arbitrage_opportunities()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrage.greatest_country_to_country_arbitrage_opportunities"><code class="docutils literal notranslate"><span class="pre">greatest_country_to_country_arbitrage_opportunities()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-investments">investments</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.SimpleRNN"><code class="docutils literal notranslate"><span class="pre">SimpleRNN</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.SimpleRNN.forward"><code class="docutils literal notranslate"><span class="pre">SimpleRNN.forward()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.build_vector_autoregression"><code class="docutils literal notranslate"><span class="pre">build_vector_autoregression()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.check_stationarity_of_timeseries"><code class="docutils literal notranslate"><span class="pre">check_stationarity_of_timeseries()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.concise_var_summary"><code class="docutils literal notranslate"><span class="pre">concise_var_summary()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.create_sequences"><code class="docutils literal notranslate"><span class="pre">create_sequences()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.load_data"><code class="docutils literal notranslate"><span class="pre">load_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.normalize_data"><code class="docutils literal notranslate"><span class="pre">normalize_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.normalize_to_cpi"><code class="docutils literal notranslate"><span class="pre">normalize_to_cpi()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.predict"><code class="docutils literal notranslate"><span class="pre">predict()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.process_food_predictions"><code class="docutils literal notranslate"><span class="pre">process_food_predictions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.train_model"><code class="docutils literal notranslate"><span class="pre">train_model()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.train_rnn_model"><code class="docutils literal notranslate"><span class="pre">train_rnn_model()</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="api-documentation">
+<h1>API Documentation<a class="headerlink" href="#api-documentation" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<section id="module-utils">
+<span id="utils"></span><h2>utils<a class="headerlink" href="#module-utils" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="utils.FoodPricesColumns">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">FoodPricesColumns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">COUNTRY</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'COUNTRY'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FOOD_ITEM</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'FOOD_ITEM'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">QUALITY</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'QUALITY'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CURRENCY</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'CURRENCY'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UNIT_OF_MEASURMENT</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'UNIT_OF_MEASURMENT'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">YEAR</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'YEAR'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">MONTH</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'MONTH'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AVERAGE_PRICE</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'AVERAGE_PRICE'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PRICE_IN_USD</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'PRICE_IN_USD'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AVAILABILITY</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'AVAILABILITY'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils.html#FoodPricesColumns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.FoodPricesColumns" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.FoodPricesColumns.AVAILABILITY">
+<span class="sig-name descname"><span class="pre">AVAILABILITY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'AVAILABILITY'</span></em><a class="headerlink" href="#utils.FoodPricesColumns.AVAILABILITY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.FoodPricesColumns.AVERAGE_PRICE">
+<span class="sig-name descname"><span class="pre">AVERAGE_PRICE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'AVERAGE_PRICE'</span></em><a class="headerlink" href="#utils.FoodPricesColumns.AVERAGE_PRICE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.FoodPricesColumns.COUNTRY">
+<span class="sig-name descname"><span class="pre">COUNTRY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'COUNTRY'</span></em><a class="headerlink" href="#utils.FoodPricesColumns.COUNTRY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.FoodPricesColumns.CURRENCY">
+<span class="sig-name descname"><span class="pre">CURRENCY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'CURRENCY'</span></em><a class="headerlink" href="#utils.FoodPricesColumns.CURRENCY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.FoodPricesColumns.FOOD_ITEM">
+<span class="sig-name descname"><span class="pre">FOOD_ITEM</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'FOOD_ITEM'</span></em><a class="headerlink" href="#utils.FoodPricesColumns.FOOD_ITEM" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.FoodPricesColumns.MONTH">
+<span class="sig-name descname"><span class="pre">MONTH</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'MONTH'</span></em><a class="headerlink" href="#utils.FoodPricesColumns.MONTH" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.FoodPricesColumns.PRICE_IN_USD">
+<span class="sig-name descname"><span class="pre">PRICE_IN_USD</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PRICE_IN_USD'</span></em><a class="headerlink" href="#utils.FoodPricesColumns.PRICE_IN_USD" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.FoodPricesColumns.QUALITY">
+<span class="sig-name descname"><span class="pre">QUALITY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'QUALITY'</span></em><a class="headerlink" href="#utils.FoodPricesColumns.QUALITY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.FoodPricesColumns.UNIT_OF_MEASURMENT">
+<span class="sig-name descname"><span class="pre">UNIT_OF_MEASURMENT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'UNIT_OF_MEASURMENT'</span></em><a class="headerlink" href="#utils.FoodPricesColumns.UNIT_OF_MEASURMENT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.FoodPricesColumns.YEAR">
+<span class="sig-name descname"><span class="pre">YEAR</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'YEAR'</span></em><a class="headerlink" href="#utils.FoodPricesColumns.YEAR" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="utils.FoodPricesColumns.categorical_columns">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">categorical_columns</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#utils.FoodPricesColumns.categorical_columns" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="utils.FoodPricesColumns.columns">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">columns</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#utils.FoodPricesColumns.columns" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="utils.FoodPricesColumns.numerical_columns">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numerical_columns</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#utils.FoodPricesColumns.numerical_columns" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="utils.Theme">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">Theme</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TRANSPARENT</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'rgba(0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0)'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TEAL</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#60C090'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TEAL_LIGHTER_80</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#DFF2E9'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TEAL_LIGHTER_60</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#BFE6D3'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TEAL_LIGHTER_40</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#A0D9BC'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TEAL_DARKER_25</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#3D9B6C'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TEAL_DARKER_50</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#296748'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DARK_TEAL</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#215649'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DARK_TEAL_LIGHTER_80</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#C6E9E1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DARK_TEAL_LIGHTER_60</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#8ED4C3'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DARK_TEAL_LIGHTER_40</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#55BEA4'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DARK_TEAL_DARKER_25</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#194037'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DARK_TEAL_DARKER_50</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#102B25'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GREEN</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#97DF65'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GREEN_LIGHTER_80</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#EAF9E0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GREEN_LIGHTER_60</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#D5F2C1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GREEN_LIGHTER_40</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#C1ECA3'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GREEN_DARKER_25</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#6BC92A'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GREEN_DARKER_50</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#47861C'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">YELLOW</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#FFFF00'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">YELLOW_LIGHTER_80</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#FFFFCC'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">YELLOW_LIGHTER_60</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#FFFF99'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">YELLOW_LIGHTER_40</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#FFFF66'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">YELLOW_DARKER_25</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#BFBF00'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">YELLOW_DARKER_50</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#7F7F0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TURQUOISE</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#00B0F0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TURQUOISE_LIGHTER_80</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#C9F1FF'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TURQUOISE_LIGHTER_60</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#93E2FF'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TURQUOISE_LIGHTER_40</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#5DD4FF'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TURQUOISE_DARKER_25</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#0084B4'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TURQUOISE_DARKER_50</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#005878'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ACCENT_GRAY</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#797979'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ACCENT_GRAY_LIGHTER_80</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#E4E4E4'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ACCENT_GRAY_LIGHTER_60</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#C9C9C9'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ACCENT_GRAY_LIGHTER_40</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#AFAFAF'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ACCENT_GRAY_DARKER_25</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#5B5B5B'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ACCENT_GRAY_DARKER_50</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#3C3C3C'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BACKGROUND_WHITE</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#FFFFFF'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BACKGROUND_WHITE_DARKER_5</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#F2F2F2'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BACKGROUND_WHITE_DARKER_15</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#D9D9D9'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BACKGROUND_WHITE_DARKER_25</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#BFBFBF'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BACKGROUND_WHITE_DARKER_35</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#A6A6A6'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BACKGROUND_WHITE_DARKER_50</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#7F7F7F'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DARK_GRAY</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#575757'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DARK_GRAY_LIGHTER_80</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#DDDDDD'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DARK_GRAY_LIGHTER_60</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#BCBCBC'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DARK_GRAY_LIGHTER_40</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#9A9A9A'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DARK_GRAY_DARKER_25</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#414141'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DARK_GRAY_DARKER_50</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'#2C2C2C'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FONT_PRIMARY</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Helvetica'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FONT_SECONDARY</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Playfair</span> <span class="pre">Display'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils.html#Theme"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.Theme" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.ACCENT_GRAY">
+<span class="sig-name descname"><span class="pre">ACCENT_GRAY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#797979'</span></em><a class="headerlink" href="#utils.Theme.ACCENT_GRAY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.ACCENT_GRAY_DARKER_25">
+<span class="sig-name descname"><span class="pre">ACCENT_GRAY_DARKER_25</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#5B5B5B'</span></em><a class="headerlink" href="#utils.Theme.ACCENT_GRAY_DARKER_25" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.ACCENT_GRAY_DARKER_50">
+<span class="sig-name descname"><span class="pre">ACCENT_GRAY_DARKER_50</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#3C3C3C'</span></em><a class="headerlink" href="#utils.Theme.ACCENT_GRAY_DARKER_50" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.ACCENT_GRAY_LIGHTER_40">
+<span class="sig-name descname"><span class="pre">ACCENT_GRAY_LIGHTER_40</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#AFAFAF'</span></em><a class="headerlink" href="#utils.Theme.ACCENT_GRAY_LIGHTER_40" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.ACCENT_GRAY_LIGHTER_60">
+<span class="sig-name descname"><span class="pre">ACCENT_GRAY_LIGHTER_60</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#C9C9C9'</span></em><a class="headerlink" href="#utils.Theme.ACCENT_GRAY_LIGHTER_60" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.ACCENT_GRAY_LIGHTER_80">
+<span class="sig-name descname"><span class="pre">ACCENT_GRAY_LIGHTER_80</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#E4E4E4'</span></em><a class="headerlink" href="#utils.Theme.ACCENT_GRAY_LIGHTER_80" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.BACKGROUND_WHITE">
+<span class="sig-name descname"><span class="pre">BACKGROUND_WHITE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#FFFFFF'</span></em><a class="headerlink" href="#utils.Theme.BACKGROUND_WHITE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.BACKGROUND_WHITE_DARKER_15">
+<span class="sig-name descname"><span class="pre">BACKGROUND_WHITE_DARKER_15</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#D9D9D9'</span></em><a class="headerlink" href="#utils.Theme.BACKGROUND_WHITE_DARKER_15" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.BACKGROUND_WHITE_DARKER_25">
+<span class="sig-name descname"><span class="pre">BACKGROUND_WHITE_DARKER_25</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#BFBFBF'</span></em><a class="headerlink" href="#utils.Theme.BACKGROUND_WHITE_DARKER_25" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.BACKGROUND_WHITE_DARKER_35">
+<span class="sig-name descname"><span class="pre">BACKGROUND_WHITE_DARKER_35</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#A6A6A6'</span></em><a class="headerlink" href="#utils.Theme.BACKGROUND_WHITE_DARKER_35" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.BACKGROUND_WHITE_DARKER_5">
+<span class="sig-name descname"><span class="pre">BACKGROUND_WHITE_DARKER_5</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#F2F2F2'</span></em><a class="headerlink" href="#utils.Theme.BACKGROUND_WHITE_DARKER_5" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.BACKGROUND_WHITE_DARKER_50">
+<span class="sig-name descname"><span class="pre">BACKGROUND_WHITE_DARKER_50</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#7F7F7F'</span></em><a class="headerlink" href="#utils.Theme.BACKGROUND_WHITE_DARKER_50" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.DARK_GRAY">
+<span class="sig-name descname"><span class="pre">DARK_GRAY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#575757'</span></em><a class="headerlink" href="#utils.Theme.DARK_GRAY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.DARK_GRAY_DARKER_25">
+<span class="sig-name descname"><span class="pre">DARK_GRAY_DARKER_25</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#414141'</span></em><a class="headerlink" href="#utils.Theme.DARK_GRAY_DARKER_25" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.DARK_GRAY_DARKER_50">
+<span class="sig-name descname"><span class="pre">DARK_GRAY_DARKER_50</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#2C2C2C'</span></em><a class="headerlink" href="#utils.Theme.DARK_GRAY_DARKER_50" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.DARK_GRAY_LIGHTER_40">
+<span class="sig-name descname"><span class="pre">DARK_GRAY_LIGHTER_40</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#9A9A9A'</span></em><a class="headerlink" href="#utils.Theme.DARK_GRAY_LIGHTER_40" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.DARK_GRAY_LIGHTER_60">
+<span class="sig-name descname"><span class="pre">DARK_GRAY_LIGHTER_60</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#BCBCBC'</span></em><a class="headerlink" href="#utils.Theme.DARK_GRAY_LIGHTER_60" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.DARK_GRAY_LIGHTER_80">
+<span class="sig-name descname"><span class="pre">DARK_GRAY_LIGHTER_80</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#DDDDDD'</span></em><a class="headerlink" href="#utils.Theme.DARK_GRAY_LIGHTER_80" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.DARK_TEAL">
+<span class="sig-name descname"><span class="pre">DARK_TEAL</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#215649'</span></em><a class="headerlink" href="#utils.Theme.DARK_TEAL" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.DARK_TEAL_DARKER_25">
+<span class="sig-name descname"><span class="pre">DARK_TEAL_DARKER_25</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#194037'</span></em><a class="headerlink" href="#utils.Theme.DARK_TEAL_DARKER_25" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.DARK_TEAL_DARKER_50">
+<span class="sig-name descname"><span class="pre">DARK_TEAL_DARKER_50</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#102B25'</span></em><a class="headerlink" href="#utils.Theme.DARK_TEAL_DARKER_50" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.DARK_TEAL_LIGHTER_40">
+<span class="sig-name descname"><span class="pre">DARK_TEAL_LIGHTER_40</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#55BEA4'</span></em><a class="headerlink" href="#utils.Theme.DARK_TEAL_LIGHTER_40" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.DARK_TEAL_LIGHTER_60">
+<span class="sig-name descname"><span class="pre">DARK_TEAL_LIGHTER_60</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#8ED4C3'</span></em><a class="headerlink" href="#utils.Theme.DARK_TEAL_LIGHTER_60" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.DARK_TEAL_LIGHTER_80">
+<span class="sig-name descname"><span class="pre">DARK_TEAL_LIGHTER_80</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#C6E9E1'</span></em><a class="headerlink" href="#utils.Theme.DARK_TEAL_LIGHTER_80" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.FONT_PRIMARY">
+<span class="sig-name descname"><span class="pre">FONT_PRIMARY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Helvetica'</span></em><a class="headerlink" href="#utils.Theme.FONT_PRIMARY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.FONT_SECONDARY">
+<span class="sig-name descname"><span class="pre">FONT_SECONDARY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Playfair</span> <span class="pre">Display'</span></em><a class="headerlink" href="#utils.Theme.FONT_SECONDARY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.GREEN">
+<span class="sig-name descname"><span class="pre">GREEN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#97DF65'</span></em><a class="headerlink" href="#utils.Theme.GREEN" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.GREEN_DARKER_25">
+<span class="sig-name descname"><span class="pre">GREEN_DARKER_25</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#6BC92A'</span></em><a class="headerlink" href="#utils.Theme.GREEN_DARKER_25" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.GREEN_DARKER_50">
+<span class="sig-name descname"><span class="pre">GREEN_DARKER_50</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#47861C'</span></em><a class="headerlink" href="#utils.Theme.GREEN_DARKER_50" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.GREEN_LIGHTER_40">
+<span class="sig-name descname"><span class="pre">GREEN_LIGHTER_40</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#C1ECA3'</span></em><a class="headerlink" href="#utils.Theme.GREEN_LIGHTER_40" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.GREEN_LIGHTER_60">
+<span class="sig-name descname"><span class="pre">GREEN_LIGHTER_60</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#D5F2C1'</span></em><a class="headerlink" href="#utils.Theme.GREEN_LIGHTER_60" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.GREEN_LIGHTER_80">
+<span class="sig-name descname"><span class="pre">GREEN_LIGHTER_80</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#EAF9E0'</span></em><a class="headerlink" href="#utils.Theme.GREEN_LIGHTER_80" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.TEAL">
+<span class="sig-name descname"><span class="pre">TEAL</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#60C090'</span></em><a class="headerlink" href="#utils.Theme.TEAL" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.TEAL_DARKER_25">
+<span class="sig-name descname"><span class="pre">TEAL_DARKER_25</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#3D9B6C'</span></em><a class="headerlink" href="#utils.Theme.TEAL_DARKER_25" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.TEAL_DARKER_50">
+<span class="sig-name descname"><span class="pre">TEAL_DARKER_50</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#296748'</span></em><a class="headerlink" href="#utils.Theme.TEAL_DARKER_50" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.TEAL_LIGHTER_40">
+<span class="sig-name descname"><span class="pre">TEAL_LIGHTER_40</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#A0D9BC'</span></em><a class="headerlink" href="#utils.Theme.TEAL_LIGHTER_40" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.TEAL_LIGHTER_60">
+<span class="sig-name descname"><span class="pre">TEAL_LIGHTER_60</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#BFE6D3'</span></em><a class="headerlink" href="#utils.Theme.TEAL_LIGHTER_60" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.TEAL_LIGHTER_80">
+<span class="sig-name descname"><span class="pre">TEAL_LIGHTER_80</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#DFF2E9'</span></em><a class="headerlink" href="#utils.Theme.TEAL_LIGHTER_80" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.TRANSPARENT">
+<span class="sig-name descname"><span class="pre">TRANSPARENT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'rgba(0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0)'</span></em><a class="headerlink" href="#utils.Theme.TRANSPARENT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.TURQUOISE">
+<span class="sig-name descname"><span class="pre">TURQUOISE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#00B0F0'</span></em><a class="headerlink" href="#utils.Theme.TURQUOISE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.TURQUOISE_DARKER_25">
+<span class="sig-name descname"><span class="pre">TURQUOISE_DARKER_25</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#0084B4'</span></em><a class="headerlink" href="#utils.Theme.TURQUOISE_DARKER_25" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.TURQUOISE_DARKER_50">
+<span class="sig-name descname"><span class="pre">TURQUOISE_DARKER_50</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#005878'</span></em><a class="headerlink" href="#utils.Theme.TURQUOISE_DARKER_50" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.TURQUOISE_LIGHTER_40">
+<span class="sig-name descname"><span class="pre">TURQUOISE_LIGHTER_40</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#5DD4FF'</span></em><a class="headerlink" href="#utils.Theme.TURQUOISE_LIGHTER_40" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.TURQUOISE_LIGHTER_60">
+<span class="sig-name descname"><span class="pre">TURQUOISE_LIGHTER_60</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#93E2FF'</span></em><a class="headerlink" href="#utils.Theme.TURQUOISE_LIGHTER_60" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.TURQUOISE_LIGHTER_80">
+<span class="sig-name descname"><span class="pre">TURQUOISE_LIGHTER_80</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#C9F1FF'</span></em><a class="headerlink" href="#utils.Theme.TURQUOISE_LIGHTER_80" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.YELLOW">
+<span class="sig-name descname"><span class="pre">YELLOW</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#FFFF00'</span></em><a class="headerlink" href="#utils.Theme.YELLOW" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.YELLOW_DARKER_25">
+<span class="sig-name descname"><span class="pre">YELLOW_DARKER_25</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#BFBF00'</span></em><a class="headerlink" href="#utils.Theme.YELLOW_DARKER_25" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.YELLOW_DARKER_50">
+<span class="sig-name descname"><span class="pre">YELLOW_DARKER_50</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#7F7F0'</span></em><a class="headerlink" href="#utils.Theme.YELLOW_DARKER_50" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.YELLOW_LIGHTER_40">
+<span class="sig-name descname"><span class="pre">YELLOW_LIGHTER_40</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#FFFF66'</span></em><a class="headerlink" href="#utils.Theme.YELLOW_LIGHTER_40" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.YELLOW_LIGHTER_60">
+<span class="sig-name descname"><span class="pre">YELLOW_LIGHTER_60</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#FFFF99'</span></em><a class="headerlink" href="#utils.Theme.YELLOW_LIGHTER_60" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.Theme.YELLOW_LIGHTER_80">
+<span class="sig-name descname"><span class="pre">YELLOW_LIGHTER_80</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#FFFFCC'</span></em><a class="headerlink" href="#utils.Theme.YELLOW_LIGHTER_80" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.Theme.generate_colorscale">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_colorscale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">len</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">255</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/utils.html#Theme.generate_colorscale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.Theme.generate_colorscale" title="Link to this definition">#</a></dt>
+<dd><p>Creates a colorscale gradient between two colors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>str</em>) – The starting color in hex format.</p></li>
+<li><p><strong>end</strong> (<em>str</em>) – The ending color in hex format.</p></li>
+<li><p><strong>len</strong> (<em>int</em>) – The number of colors to generate in the gradient.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A list of colors in hex format for the</dt><dd><p>gradient between the two colors.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.clean_data">
+<span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">clean_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/utils.html#clean_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.clean_data" title="Link to this definition">#</a></dt>
+<dd><p>Clean the data by removing rows with missing values.</p>
+<p>In addition cleans column names to be all caps and fills
+spaces with underscores.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pd.DataFrame</em>) – The dataframe to clean.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The cleaned dataframe.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.load_env">
+<span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">load_env</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/utils.html#load_env"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.load_env" title="Link to this definition">#</a></dt>
+<dd><p>Load environment variables from .env file.</p>
+<p>Assumes that the .env file is in the base directory of the project,
+otherwise the path to the .env file should be provided.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – The path to the .env file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.load_variables">
+<span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">load_variables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/utils.html#load_variables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.load_variables" title="Link to this definition">#</a></dt>
+<dd><p>Load environment variables from variables.yml file.</p>
+<p>Assumes that the variables.yml file is in the base directory of the project,
+otherwise the path to the variables.yml file should be provided.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – The path to the variables.yml file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-descriptive_statistics">
+<span id="descriptive-statistics"></span><h2>descriptive_statistics<a class="headerlink" href="#module-descriptive_statistics" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="descriptive_statistics.calculate_cpi">
+<span class="sig-prename descclassname"><span class="pre">descriptive_statistics.</span></span><span class="sig-name descname"><span class="pre">calculate_cpi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/descriptive_statistics.html#calculate_cpi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#descriptive_statistics.calculate_cpi" title="Link to this definition">#</a></dt>
+<dd><p>Calculates the Consumer Price Index (CPI) for each country, year, and month.</p>
+<p>This function assumes the data has been cleaned. We will assume equal household weights for the
+goods, corresponding to the UNIT_OF_MEASUREMENT. This means each household purchases
+1 liter of milk, 1 loaf of bread, and 1 carton of eggs. While simplistic, this assumption
+provides a straightforward starting point.</p>
+<p>According to the U.S. Bureau of Labor Statistics, the formula for the CPI is:
+&gt; A consumer price index (CPI) is usually calculated as a weighted average of the price change
+of the goods and services covered by the index. The weights are meant to reflect the relative
+importance of the goods and services as measured by their shares in the total consumption of
+households. The weight attached to each good or service determines the impact that its price
+change will have on the overall index. The weights should be made publicly available in the
+interests of transparency and for the information of the users of the index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pd.DataFrame</em>) – The cleaned price dataset.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The Consumer Price Index (CPI) for each country, year, and month.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="descriptive_statistics.calculate_cpi_average_individual_product">
+<span class="sig-prename descclassname"><span class="pre">descriptive_statistics.</span></span><span class="sig-name descname"><span class="pre">calculate_cpi_average_individual_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/descriptive_statistics.html#calculate_cpi_average_individual_product"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#descriptive_statistics.calculate_cpi_average_individual_product" title="Link to this definition">#</a></dt>
+<dd><p>Calculates the Consumer Price Index AIP metric for each country, year, and month.</p>
+<p>We define the Consumer Price Index Average Individual Product (CPI AIP) as the average of the
+CPI for each individual product and then averaging these CPIs. This method allows us to
+equally weight the price effects of each of the individual products. Unlike the traditional CPI,
+which uses the fixed basket of goods, we had to make some assumptions about the household
+consumption of each product. This method just shows the average price change across all products.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pd.DataFrame</em>) – The cleaned price dataset.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The Consumer Price Index Average Individual Product (CPI AIP) for each country, year, and month.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="descriptive_statistics.calculate_cpi_product">
+<span class="sig-prename descclassname"><span class="pre">descriptive_statistics.</span></span><span class="sig-name descname"><span class="pre">calculate_cpi_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price_col</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'PRICE_IN_USD'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/descriptive_statistics.html#calculate_cpi_product"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#descriptive_statistics.calculate_cpi_product" title="Link to this definition">#</a></dt>
+<dd><p>Calculates the Consumer Price Index (CPI) for each country, year, and month for each food item.</p>
+<p>This function will calculate the CPI or price index for each individual product or food item
+within the dataset. This function assumes that the data has been cleaned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – The cleaned price dataset.</p></li>
+<li><p><strong>price_col</strong> (<em>str</em>) – The column name for the price data. Optional, defaults to “PRICE_IN_USD”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The Consumer Price Index (CPI) for each country, year, and month for each food item.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="descriptive_statistics.compare_cpi_difference">
+<span class="sig-prename descclassname"><span class="pre">descriptive_statistics.</span></span><span class="sig-name descname"><span class="pre">compare_cpi_difference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cpi_product_usd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cpi_product_local</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/descriptive_statistics.html#compare_cpi_difference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#descriptive_statistics.compare_cpi_difference" title="Link to this definition">#</a></dt>
+<dd><p>Compares the CPI in USD and local currency, calculating the difference and returning the sorted values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cpi_product_usd</strong> (<em>pd.DataFrame</em>) – CPI data in USD.</p></li>
+<li><p><strong>cpi_product_local</strong> (<em>pd.DataFrame</em>) – CPI data in local currency.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame containing the CPI differences sorted in descending order.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="descriptive_statistics.descriptions">
+<span class="sig-prename descclassname"><span class="pre">descriptive_statistics.</span></span><span class="sig-name descname"><span class="pre">descriptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/descriptive_statistics.html#descriptions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#descriptive_statistics.descriptions" title="Link to this definition">#</a></dt>
+<dd><p>Builds a description of the dataset using pandas describe function.</p>
+<p>First the unnecessary columns are removed and then the describe function is called.
+The dataframe is grouped by country year and food item. The returned df
+can be indexed by column and by row using the .loc method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pd.DataFrame</em>) – The dataframe to describe.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The description of the dataset.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="descriptive_statistics.inter_country_price_statistic_table">
+<span class="sig-prename descclassname"><span class="pre">descriptive_statistics.</span></span><span class="sig-name descname"><span class="pre">inter_country_price_statistic_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">food_item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statistic</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/descriptive_statistics.html#inter_country_price_statistic_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#descriptive_statistics.inter_country_price_statistic_table" title="Link to this definition">#</a></dt>
+<dd><p>Create a table for a given food item and statistic, comparing the statistic across all countries, and years.</p>
+<p>The statistic should be one of the following: “AVERAGE_PRICE”, “PERC_PRICE_CHANGE_START_YEAR_TO_END_YEAR”,
+“MAX_INTER_MONTH_PRICE_CHANGE”, “MAX_OVERALL_PRICE_CHANGE”, “PRICE_STANDARD_DEVIATION”,
+“PRICE_VARIANCE”.</p>
+<p>This function assumes the data has been cleaned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>food_item</strong> (<em>str</em>) – The food item to filter by.</p></li>
+<li><p><strong>statistic</strong> (<em>str</em>) – The statistic to compare across countries and years.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="descriptive_statistics.price_statistics">
+<span class="sig-prename descclassname"><span class="pre">descriptive_statistics.</span></span><span class="sig-name descname"><span class="pre">price_statistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">food</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/descriptive_statistics.html#price_statistics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#descriptive_statistics.price_statistics" title="Link to this definition">#</a></dt>
+<dd><p>For the given country, food, and currency, create a matrix of average price,
+CPI between the 1st and 12th month, the greatest rolling CPI for the full year period,
+the total standard deviation, and variation in price for all years.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – The dataframe to use. Assumed it has been cleaned.</p></li>
+<li><p><strong>country</strong> (<em>str</em>) – The country to filter by.</p></li>
+<li><p><strong>food</strong> (<em>str</em>) – The food item to filter by.</p></li>
+<li><p><strong>currency</strong> (<em>str</em>) – The currency to filter by, can be “USD” or “local”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A matrix of average price and other statistics for each year.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-graphing">
+<span id="graphing"></span><h2>graphing<a class="headerlink" href="#module-graphing" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="graphing.inter_country_price_heatmaps">
+<span class="sig-prename descclassname"><span class="pre">graphing.</span></span><span class="sig-name descname"><span class="pre">inter_country_price_heatmaps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalized_prices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">food_item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statistic</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/graphing.html#inter_country_price_heatmaps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#graphing.inter_country_price_heatmaps" title="Link to this definition">#</a></dt>
+<dd><p>Create two heatmaps to compare prices and normalized prices.</p>
+<p>The first heatmap shows the average prices for each country and year. The second
+heatmaps is normalized by the average price for that good across all countries for
+that particular year.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prices</strong> (<em>pd.DataFrame</em>) – The prices for each country and year.</p></li>
+<li><p><strong>normalized_prices</strong> (<em>pd.DataFrame</em>) – The normalized prices for each country and</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-arbitrage">
+<span id="arbitrage"></span><h2>arbitrage<a class="headerlink" href="#module-arbitrage" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="arbitrage.calculate_average_exchange_rate">
+<span class="sig-prename descclassname"><span class="pre">arbitrage.</span></span><span class="sig-name descname"><span class="pre">calculate_average_exchange_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/arbitrage.html#calculate_average_exchange_rate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#arbitrage.calculate_average_exchange_rate" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the average exchange rate for each country.</p>
+<p>Assumes dataset is cleaned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pd.DataFrame</em>) – The dataframe to calculate the exchange rate for.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The dataframe with the average exchange rate calculated.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="arbitrage.calculate_exchange_rate">
+<span class="sig-prename descclassname"><span class="pre">arbitrage.</span></span><span class="sig-name descname"><span class="pre">calculate_exchange_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/arbitrage.html#calculate_exchange_rate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#arbitrage.calculate_exchange_rate" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the exchange rate for each product, country, and year/month.</p>
+<p>Assumes dataset is cleaned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pd.DataFrame</em>) – The dataframe to calculate the exchange rate for.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The dataframe with the exchange rate calculated.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="arbitrage.calculate_normalized_average_exchange_rate">
+<span class="sig-prename descclassname"><span class="pre">arbitrage.</span></span><span class="sig-name descname"><span class="pre">calculate_normalized_average_exchange_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/arbitrage.html#calculate_normalized_average_exchange_rate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#arbitrage.calculate_normalized_average_exchange_rate" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the normalized average exchange rate for each country.</p>
+<p>Assumes dataset is cleaned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pd.DataFrame</em>) – The dataframe to calculate the exchange rate for.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The dataframe with the normalized average exchange rate calculated.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="arbitrage.check_exchange_rate">
+<span class="sig-prename descclassname"><span class="pre">arbitrage.</span></span><span class="sig-name descname"><span class="pre">check_exchange_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/arbitrage.html#check_exchange_rate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#arbitrage.check_exchange_rate" title="Link to this definition">#</a></dt>
+<dd><p>Checks that during the same year and month, the exchange rate is the same for all products within a country.</p>
+<p>Assumes dataset is cleaned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pd.DataFrame</em>) – The dataframe to calculate the exchange rate for.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the exchange rate is the same for all products within a country, for that year and month. False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="arbitrage.find_all_arbitrage_opportunities">
+<span class="sig-prename descclassname"><span class="pre">arbitrage.</span></span><span class="sig-name descname"><span class="pre">find_all_arbitrage_opportunities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/arbitrage.html#find_all_arbitrage_opportunities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#arbitrage.find_all_arbitrage_opportunities" title="Link to this definition">#</a></dt>
+<dd><p>Finds all arbitrage opportunities for a given year.</p>
+<p>Assumes dataset is cleaned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – The dataframe to calculate the exchange rate for.</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – The year to find arbitrage opportunities for.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The dataframe with the arbitrage opportunities.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="arbitrage.greatest_arbitrage_opportunities">
+<span class="sig-prename descclassname"><span class="pre">arbitrage.</span></span><span class="sig-name descname"><span class="pre">greatest_arbitrage_opportunities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cpi_adjusted</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/arbitrage.html#greatest_arbitrage_opportunities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#arbitrage.greatest_arbitrage_opportunities" title="Link to this definition">#</a></dt>
+<dd><p>Finds the greatest arbitrage opportunities for each year, month, product group.</p>
+<p>If the <cite>cpi_adjusted</cite> parameter is set to True, the profit will be adjusted for inflation, the
+original price dataframe then must be provided. If it is not provided, the function will return
+an error.</p>
+<p>Assumes the original dataframe is cleaned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – The dataframe that is returned from <cite>find_all_arbitrage_opportunities</cite>.</p></li>
+<li><p><strong>original_df</strong> (<em>pd.DataFrame</em>) – The original dataframe with prices. Must be provided if <cite>cpi_adjusted</cite> is True.</p></li>
+<li><p><strong>cpi_adjusted</strong> (<em>bool</em>) – Whether to adjust the profit for inflation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The dataframe with the greatest arbitrage opportunities.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="arbitrage.greatest_country_to_country_arbitrage_opportunities">
+<span class="sig-prename descclassname"><span class="pre">arbitrage.</span></span><span class="sig-name descname"><span class="pre">greatest_country_to_country_arbitrage_opportunities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arbitrage_opportunities</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/arbitrage.html#greatest_country_to_country_arbitrage_opportunities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#arbitrage.greatest_country_to_country_arbitrage_opportunities" title="Link to this definition">#</a></dt>
+<dd><p>Finds the greatest arbitrage opportunities for each country to country pair.</p>
+<p>Assumes dataset is cleaned. Automatically adjusts for inflation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arbitrage_opportunities</strong> (<em>pd.DataFrame</em>) – The dataframe that is returned from <cite>find_all_arbitrage_opportunities</cite>.</p></li>
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – The original dataframe with prices.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The dataframe with the greatest arbitrage country to country opportunities.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-investments">
+<span id="investments"></span><h2>investments<a class="headerlink" href="#module-investments" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="investments.SimpleRNN">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">investments.</span></span><span class="sig-name descname"><span class="pre">SimpleRNN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hidden_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_size</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/investments.html#SimpleRNN"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#investments.SimpleRNN" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="investments.SimpleRNN.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/investments.html#SimpleRNN.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#investments.SimpleRNN.forward" title="Link to this definition">#</a></dt>
+<dd><p>Define the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="investments.build_vector_autoregression">
+<span class="sig-prename descclassname"><span class="pre">investments.</span></span><span class="sig-name descname"><span class="pre">build_vector_autoregression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">food_item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/investments.html#build_vector_autoregression"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#investments.build_vector_autoregression" title="Link to this definition">#</a></dt>
+<dd><p>Builds a Vector Autoregression (VAR) model for the given column, assuming the time series
+data is stationary at the country and product level.</p>
+<p>Either one of country or food_item needs to be provided and data is filtered for it. If country is provided
+the data is filtered for country. If food_item is provided then data is filtered for food_item. Otherwise
+an error is thrown.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – The dataframe to build the VAR model for.</p></li>
+<li><p><strong>col</strong> (<em>str</em>) – The column to build the VAR model for.</p></li>
+<li><p><strong>country</strong> (<em>str</em><em>, </em><em>optional</em>) – The country to filter the data for.</p></li>
+<li><p><strong>food_item</strong> (<em>str</em><em>, </em><em>optional</em>) – The food item to filter the data for.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The fitted VAR model.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>VARResults</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="investments.check_stationarity_of_timeseries">
+<span class="sig-prename descclassname"><span class="pre">investments.</span></span><span class="sig-name descname"><span class="pre">check_stationarity_of_timeseries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">food_item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/investments.html#check_stationarity_of_timeseries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#investments.check_stationarity_of_timeseries" title="Link to this definition">#</a></dt>
+<dd><p>Checks if the time series of the price of a product in a country is stationary.</p>
+<p>This assumes the dataset is cleaned and has a column for the CPI_ADJUSTED_PRICE.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – The dataframe to check the stationarity for.</p></li>
+<li><p><strong>country</strong> (<em>str</em>) – The country to check the stationarity for.</p></li>
+<li><p><strong>food_item</strong> (<em>str</em>) – The product to check the stationarity for.</p></li>
+<li><p><strong>col</strong> (<em>str</em>) – The column to check the stationarity for.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the time series of the price of a product in a country is stationary. False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="investments.concise_var_summary">
+<span class="sig-prename descclassname"><span class="pre">investments.</span></span><span class="sig-name descname"><span class="pre">concise_var_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fitted_model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/investments.html#concise_var_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#investments.concise_var_summary" title="Link to this definition">#</a></dt>
+<dd><p>Generates a concise summary of the fitted VAR model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fitted_model</strong> (<em>VARResults</em>) – The fitted VAR model.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A concise summary of the VAR model.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="investments.create_sequences">
+<span class="sig-prename descclassname"><span class="pre">investments.</span></span><span class="sig-name descname"><span class="pre">create_sequences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_length</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/investments.html#create_sequences"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#investments.create_sequences" title="Link to this definition">#</a></dt>
+<dd><p>Create sequences of data for training the RNN model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>np.ndarray</em>) – The data to create sequences from.</p></li>
+<li><p><strong>seq_length</strong> (<em>int</em>) – The sequence length.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="investments.load_data">
+<span class="sig-prename descclassname"><span class="pre">investments.</span></span><span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">food_item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/investments.html#load_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#investments.load_data" title="Link to this definition">#</a></dt>
+<dd><p>This function filters the dataframe for a specific food item and pivots the data for prediction.</p>
+<p>This function assumes that the previous preprocessing steps have been completed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – The dataframe to filter.</p></li>
+<li><p><strong>food_item</strong> (<em>str</em>) – The food item to filter the dataframe for.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="investments.normalize_data">
+<span class="sig-prename descclassname"><span class="pre">investments.</span></span><span class="sig-name descname"><span class="pre">normalize_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_pivot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/investments.html#normalize_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#investments.normalize_data" title="Link to this definition">#</a></dt>
+<dd><p>Normalizes the data using MinMaxScaler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df_pivot</strong> (<em>pd.DataFrame</em>) – The dataframe to normalize.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The normalized dataframe.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="investments.normalize_to_cpi">
+<span class="sig-prename descclassname"><span class="pre">investments.</span></span><span class="sig-name descname"><span class="pre">normalize_to_cpi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/investments.html#normalize_to_cpi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#investments.normalize_to_cpi" title="Link to this definition">#</a></dt>
+<dd><p>Normalizes the price for each country, product year to the
+price index for each country, product, and year.</p>
+<p>This does this in a no-leakage way by calculate the normalized price based on
+the previous month’s price-index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pd.DataFrame</em>) – The dataframe to normalize the exchange rate for.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The dataframe with the exchange rate normalized to the CPI.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="investments.predict">
+<span class="sig-prename descclassname"><span class="pre">investments.</span></span><span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/investments.html#predict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#investments.predict" title="Link to this definition">#</a></dt>
+<dd><p>Predict future values using the trained RNN model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>nn.Module</em>) – The trained RNN model.</p></li>
+<li><p><strong>data</strong> (<em>np.ndarray</em>) – The data to predict future values for.</p></li>
+<li><p><strong>seq_length</strong> (<em>int</em>) – The sequence length.</p></li>
+<li><p><strong>future_steps</strong> (<em>int</em>) – The number of future steps to predict.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="investments.process_food_predictions">
+<span class="sig-prename descclassname"><span class="pre">investments.</span></span><span class="sig-name descname"><span class="pre">process_food_predictions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future_predictions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">food_item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/investments.html#process_food_predictions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#investments.process_food_predictions" title="Link to this definition">#</a></dt>
+<dd><p>Processes future predictions for a specified food item by merging them with actual data,
+adjusting columns, and computing predicted prices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – The dataframe containing the food item data.</p></li>
+<li><p><strong>future_predictions</strong> (<em>np.ndarray</em>) – Array of future predictions.</p></li>
+<li><p><strong>food_item</strong> (<em>str</em>) – The food item to process.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The dataframe with processed predictions and computed prices.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="investments.train_model">
+<span class="sig-prename descclassname"><span class="pre">investments.</span></span><span class="sig-name descname"><span class="pre">train_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_loader</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataLoader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">criterion</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Module</span></span></span><a class="reference internal" href="_modules/investments.html#train_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#investments.train_model" title="Link to this definition">#</a></dt>
+<dd><p>Train the RNN model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>nn.Module</em>) – The RNN model.</p></li>
+<li><p><strong>train_loader</strong> (<em>DataLoader</em>) – The DataLoader for training data.</p></li>
+<li><p><strong>criterion</strong> (<em>nn.Module</em>) – The loss function.</p></li>
+<li><p><strong>optimizer</strong> (<em>optim.Optimizer</em>) – The optimizer.</p></li>
+<li><p><strong>epochs</strong> (<em>int</em>) – The number of epochs to train the model.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The trained RNN model.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nn.Module</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="investments.train_rnn_model">
+<span class="sig-prename descclassname"><span class="pre">investments.</span></span><span class="sig-name descname"><span class="pre">train_rnn_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">food_item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_splits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hidden_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Module</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">MinMaxScaler</span></span></span><a class="reference internal" href="_modules/investments.html#train_rnn_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#investments.train_rnn_model" title="Link to this definition">#</a></dt>
+<dd><p>Processes a food item by normalizing data, creating sequences, splitting the data, and training a model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – The dataframe containing the food item data.</p></li>
+<li><p><strong>food_item</strong> (<em>str</em>) – The food item to process.</p></li>
+<li><p><strong>n_splits</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of splits for TimeSeriesSplit. Default is 10.</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Batch size for DataLoader. Default is 1.</p></li>
+<li><p><strong>hidden_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Hidden size for the RNN model. Default is 6.</p></li>
+<li><p><strong>learning_rate</strong> (<em>float</em><em>, </em><em>optional</em>) – Learning rate for the optimizer. Default is 0.001.</p></li>
+<li><p><strong>num_epochs</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of epochs for training the model. Default is 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The trained RNN model.
+np.ndarray: The normalized data.
+MinMaxScaler: The MinMaxScaler used for normalization.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nn.Module</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="exercise_two_arbitrage.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercise Two - Arbitrage</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-utils">utils</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.AVAILABILITY"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.AVAILABILITY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.AVERAGE_PRICE"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.AVERAGE_PRICE</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.COUNTRY"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.COUNTRY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.CURRENCY"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.CURRENCY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.FOOD_ITEM"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.FOOD_ITEM</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.MONTH"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.MONTH</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.PRICE_IN_USD"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.PRICE_IN_USD</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.QUALITY"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.QUALITY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.UNIT_OF_MEASURMENT"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.UNIT_OF_MEASURMENT</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.YEAR"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.YEAR</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.categorical_columns"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.categorical_columns</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.columns"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.columns</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.FoodPricesColumns.numerical_columns"><code class="docutils literal notranslate"><span class="pre">FoodPricesColumns.numerical_columns</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme"><code class="docutils literal notranslate"><span class="pre">Theme</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.ACCENT_GRAY"><code class="docutils literal notranslate"><span class="pre">Theme.ACCENT_GRAY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.ACCENT_GRAY_DARKER_25"><code class="docutils literal notranslate"><span class="pre">Theme.ACCENT_GRAY_DARKER_25</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.ACCENT_GRAY_DARKER_50"><code class="docutils literal notranslate"><span class="pre">Theme.ACCENT_GRAY_DARKER_50</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.ACCENT_GRAY_LIGHTER_40"><code class="docutils literal notranslate"><span class="pre">Theme.ACCENT_GRAY_LIGHTER_40</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.ACCENT_GRAY_LIGHTER_60"><code class="docutils literal notranslate"><span class="pre">Theme.ACCENT_GRAY_LIGHTER_60</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.ACCENT_GRAY_LIGHTER_80"><code class="docutils literal notranslate"><span class="pre">Theme.ACCENT_GRAY_LIGHTER_80</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.BACKGROUND_WHITE"><code class="docutils literal notranslate"><span class="pre">Theme.BACKGROUND_WHITE</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.BACKGROUND_WHITE_DARKER_15"><code class="docutils literal notranslate"><span class="pre">Theme.BACKGROUND_WHITE_DARKER_15</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.BACKGROUND_WHITE_DARKER_25"><code class="docutils literal notranslate"><span class="pre">Theme.BACKGROUND_WHITE_DARKER_25</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.BACKGROUND_WHITE_DARKER_35"><code class="docutils literal notranslate"><span class="pre">Theme.BACKGROUND_WHITE_DARKER_35</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.BACKGROUND_WHITE_DARKER_5"><code class="docutils literal notranslate"><span class="pre">Theme.BACKGROUND_WHITE_DARKER_5</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.BACKGROUND_WHITE_DARKER_50"><code class="docutils literal notranslate"><span class="pre">Theme.BACKGROUND_WHITE_DARKER_50</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_GRAY"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_GRAY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_GRAY_DARKER_25"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_GRAY_DARKER_25</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_GRAY_DARKER_50"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_GRAY_DARKER_50</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_GRAY_LIGHTER_40"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_GRAY_LIGHTER_40</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_GRAY_LIGHTER_60"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_GRAY_LIGHTER_60</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_GRAY_LIGHTER_80"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_GRAY_LIGHTER_80</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_TEAL"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_TEAL</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_TEAL_DARKER_25"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_TEAL_DARKER_25</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_TEAL_DARKER_50"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_TEAL_DARKER_50</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_TEAL_LIGHTER_40"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_TEAL_LIGHTER_40</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_TEAL_LIGHTER_60"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_TEAL_LIGHTER_60</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.DARK_TEAL_LIGHTER_80"><code class="docutils literal notranslate"><span class="pre">Theme.DARK_TEAL_LIGHTER_80</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.FONT_PRIMARY"><code class="docutils literal notranslate"><span class="pre">Theme.FONT_PRIMARY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.FONT_SECONDARY"><code class="docutils literal notranslate"><span class="pre">Theme.FONT_SECONDARY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.GREEN"><code class="docutils literal notranslate"><span class="pre">Theme.GREEN</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.GREEN_DARKER_25"><code class="docutils literal notranslate"><span class="pre">Theme.GREEN_DARKER_25</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.GREEN_DARKER_50"><code class="docutils literal notranslate"><span class="pre">Theme.GREEN_DARKER_50</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.GREEN_LIGHTER_40"><code class="docutils literal notranslate"><span class="pre">Theme.GREEN_LIGHTER_40</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.GREEN_LIGHTER_60"><code class="docutils literal notranslate"><span class="pre">Theme.GREEN_LIGHTER_60</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.GREEN_LIGHTER_80"><code class="docutils literal notranslate"><span class="pre">Theme.GREEN_LIGHTER_80</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TEAL"><code class="docutils literal notranslate"><span class="pre">Theme.TEAL</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TEAL_DARKER_25"><code class="docutils literal notranslate"><span class="pre">Theme.TEAL_DARKER_25</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TEAL_DARKER_50"><code class="docutils literal notranslate"><span class="pre">Theme.TEAL_DARKER_50</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TEAL_LIGHTER_40"><code class="docutils literal notranslate"><span class="pre">Theme.TEAL_LIGHTER_40</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TEAL_LIGHTER_60"><code class="docutils literal notranslate"><span class="pre">Theme.TEAL_LIGHTER_60</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TEAL_LIGHTER_80"><code class="docutils literal notranslate"><span class="pre">Theme.TEAL_LIGHTER_80</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TRANSPARENT"><code class="docutils literal notranslate"><span class="pre">Theme.TRANSPARENT</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TURQUOISE"><code class="docutils literal notranslate"><span class="pre">Theme.TURQUOISE</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TURQUOISE_DARKER_25"><code class="docutils literal notranslate"><span class="pre">Theme.TURQUOISE_DARKER_25</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TURQUOISE_DARKER_50"><code class="docutils literal notranslate"><span class="pre">Theme.TURQUOISE_DARKER_50</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TURQUOISE_LIGHTER_40"><code class="docutils literal notranslate"><span class="pre">Theme.TURQUOISE_LIGHTER_40</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TURQUOISE_LIGHTER_60"><code class="docutils literal notranslate"><span class="pre">Theme.TURQUOISE_LIGHTER_60</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.TURQUOISE_LIGHTER_80"><code class="docutils literal notranslate"><span class="pre">Theme.TURQUOISE_LIGHTER_80</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.YELLOW"><code class="docutils literal notranslate"><span class="pre">Theme.YELLOW</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.YELLOW_DARKER_25"><code class="docutils literal notranslate"><span class="pre">Theme.YELLOW_DARKER_25</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.YELLOW_DARKER_50"><code class="docutils literal notranslate"><span class="pre">Theme.YELLOW_DARKER_50</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.YELLOW_LIGHTER_40"><code class="docutils literal notranslate"><span class="pre">Theme.YELLOW_LIGHTER_40</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.YELLOW_LIGHTER_60"><code class="docutils literal notranslate"><span class="pre">Theme.YELLOW_LIGHTER_60</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.YELLOW_LIGHTER_80"><code class="docutils literal notranslate"><span class="pre">Theme.YELLOW_LIGHTER_80</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.Theme.generate_colorscale"><code class="docutils literal notranslate"><span class="pre">Theme.generate_colorscale()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.clean_data"><code class="docutils literal notranslate"><span class="pre">clean_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.load_env"><code class="docutils literal notranslate"><span class="pre">load_env()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.load_variables"><code class="docutils literal notranslate"><span class="pre">load_variables()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-descriptive_statistics">descriptive_statistics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive_statistics.calculate_cpi"><code class="docutils literal notranslate"><span class="pre">calculate_cpi()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive_statistics.calculate_cpi_average_individual_product"><code class="docutils literal notranslate"><span class="pre">calculate_cpi_average_individual_product()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive_statistics.calculate_cpi_product"><code class="docutils literal notranslate"><span class="pre">calculate_cpi_product()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive_statistics.compare_cpi_difference"><code class="docutils literal notranslate"><span class="pre">compare_cpi_difference()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive_statistics.descriptions"><code class="docutils literal notranslate"><span class="pre">descriptions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive_statistics.inter_country_price_statistic_table"><code class="docutils literal notranslate"><span class="pre">inter_country_price_statistic_table()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive_statistics.price_statistics"><code class="docutils literal notranslate"><span class="pre">price_statistics()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-graphing">graphing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphing.inter_country_price_heatmaps"><code class="docutils literal notranslate"><span class="pre">inter_country_price_heatmaps()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-arbitrage">arbitrage</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrage.calculate_average_exchange_rate"><code class="docutils literal notranslate"><span class="pre">calculate_average_exchange_rate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrage.calculate_exchange_rate"><code class="docutils literal notranslate"><span class="pre">calculate_exchange_rate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrage.calculate_normalized_average_exchange_rate"><code class="docutils literal notranslate"><span class="pre">calculate_normalized_average_exchange_rate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrage.check_exchange_rate"><code class="docutils literal notranslate"><span class="pre">check_exchange_rate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrage.find_all_arbitrage_opportunities"><code class="docutils literal notranslate"><span class="pre">find_all_arbitrage_opportunities()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrage.greatest_arbitrage_opportunities"><code class="docutils literal notranslate"><span class="pre">greatest_arbitrage_opportunities()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrage.greatest_country_to_country_arbitrage_opportunities"><code class="docutils literal notranslate"><span class="pre">greatest_country_to_country_arbitrage_opportunities()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-investments">investments</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.SimpleRNN"><code class="docutils literal notranslate"><span class="pre">SimpleRNN</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.SimpleRNN.forward"><code class="docutils literal notranslate"><span class="pre">SimpleRNN.forward()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.build_vector_autoregression"><code class="docutils literal notranslate"><span class="pre">build_vector_autoregression()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.check_stationarity_of_timeseries"><code class="docutils literal notranslate"><span class="pre">check_stationarity_of_timeseries()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.concise_var_summary"><code class="docutils literal notranslate"><span class="pre">concise_var_summary()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.create_sequences"><code class="docutils literal notranslate"><span class="pre">create_sequences()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.load_data"><code class="docutils literal notranslate"><span class="pre">load_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.normalize_data"><code class="docutils literal notranslate"><span class="pre">normalize_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.normalize_to_cpi"><code class="docutils literal notranslate"><span class="pre">normalize_to_cpi()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.predict"><code class="docutils literal notranslate"><span class="pre">predict()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.process_food_predictions"><code class="docutils literal notranslate"><span class="pre">process_food_predictions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.train_model"><code class="docutils literal notranslate"><span class="pre">train_model()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investments.train_rnn_model"><code class="docutils literal notranslate"><span class="pre">train_rnn_model()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Adam Costarino
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, by Boston Consulting Group. All rights reserved.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+@font-face {
+    font-family: BCG-Henderson-Mod-Regular;
+    src: url("fonts/BCG Henderson Mod-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: BCG-Henderson-Mod-ExtraBold;
+    src: url("fonts/BCG\ Henderson\ Mod-ExtraBold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: BCG-Henderson-Mod-Light;
+    src: url("/fonts/BCG\ Henderson\ Mod-Light.otf") format("opentype");
+}
+
+:root {
+    --transparent: rgba(0, 0, 0, 0);
+    --white: #FFF;
+
+    --teal: #60C090;
+    --teal-lighter-80: #DFF2E9;
+    --teal-lighter-60: #BFE6D3;
+    --teal-lighter-40: #A0D9BC;
+    --teal-darker-25: #3D9B6C;
+    --teal-darker-50: #296748;
+
+    --dark-teal: #215649;
+    --dark-teal-lighter-80: #C6E9E1;
+    --dark-teal-lighter-60: #8ED4C3;
+    --dark-teal-lighter-40: #55BEA4;
+    --dark-teal-darker-25: #194037;
+    --dark-teal-darker-50: #102B25;
+
+    --green: #97DF65;
+    --green-lighter-80: #EAF9E0;
+    --green-lighter-60: #D5F2C1;
+    --green-lighter-40: #C1ECA3;
+    --green-darker-25: #6BC92A;
+    --green-darker-50: #47861C;
+
+    --yellow: #FFFF00;
+    --yellow-lighter_80: #FFFFCC;
+    --yellow-lighter_60: #FFFF99;
+    --yellow-lighter_40: #FFFF66;
+    --yellow-darker_25: #BFBF00;
+    --yellow-darker_50: #7F7F0;
+
+    --turquoise: #00B0F0;
+    --turquoise-lighter_80: #C9F1FF;
+    --turquoise-lighter_60: #93E2FF;
+    --turquoise-lighter_40: #5DD4FF;
+    --turquoise-darker_25: #0084B4;
+    --turquoise-darker_50: #005878;
+
+    --accent-gray: #797979;
+    --accent-gray-lighter-80: #E4E4E4;
+    --accent-gray-lighter-60: #C9C9C9;
+    --accent-gray-lighter-40: #AFAFAF;
+    --accent-gray-darker-25: #5B5B5B;
+    --accent-gray-darker-50: #3C3C3C;
+
+    --background-white: #FFFFFF;
+    --background-white-darker-5: #F2F2F2;
+    --background-white-darker-15: #D9D9D9;
+    --background-white-darker-25: #BFBFBF;
+    --background-white-darker-35: #A6A6A6;
+    --background-white-darker-50: #7F7F7F;
+
+    --dark-gray: #575757;
+    --dark-gray-lighter-80: #DDDDDD;
+    --dark-gray-lighter-60: #BCBCBC;
+    --dark-gray-lighter-40: #9A9A9A;
+    --dark-gray-darker-25: #414141;
+    --dark-gray-darker-50: #2C2C2C;
+
+    --bs-font-sans-serif: system-ui, -apple-system, "BCG-Henderson-Mod-Regular", sans-serif;
+
+    --bs-body-font-family: --bs-font-sans-serif;
+    --bs-body-color: var(--dark-gray-darker-25);
+    --bs-body-bg: var(--dark-gray-darker-25);
+    --bs-primary-rgb: var(--dark-gray-darker-25);
+
+    --bs-font-sans-serif: system-ui, -apple-system, "BCG-Henderson-Mod-Regular", sans-serif;
+
+    --bs-body-font-family: --bs-font-sans-serif;
+}
+
+body {
+    font-family: "BCG-Henderson-Mod-Regular", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "BCG-Henderson-Mod-Regular", sans-serif;
+}
+
+h3 {
+    font-size: medium;
+}
+
+/* Changes background color for the light theme */
+html.light {
+    background-color: var(--background-white-darker-5); /* Change this hex code to your desired color */
+}
+
+/* To ensure that all common containers match the new background color */
+html.light .sphinxsidebar, html.light .sphinxsidebarwrapper,
+html.light .footer, html.light .header, html.light .main {
+    background-color: var(--background-white-darker-5); /* Ensuring sidebar, footer, header, and main content area match */
+}
+
+/* Changes background color for the dark theme */
+html.dark {
+    background-color: var(--dark-gray); /* Change this hex code to your desired color */
+}
+
+/* To ensure that all common containers match the new background color */
+html.dark .sphinxsidebar, html.dark .sphinxsidebarwrapper,
+html.dark .footer, html.dark .header, html.dark .main {
+    background-color: var(--dark-gray); /* Ensuring sidebar, footer, header, and main content area match */
+}
+
+/* Ensure the API Documentation heading is expanded and does not collapse */
+.wy-menu-vertical ul.current {
+    display: block;
+}
+
+/* Ensure the first level of the table of contents is always displayed */
+.wy-menu-vertical .toctree-l1 > a {
+    font-weight: bold;
+}
+
+/* Ensure that all sub-levels are displayed */
+.wy-menu-vertical ul li.current > ul {
+    display: block;
+}
+
+.wy-menu-vertical ul li > a {
+    font-weight: normal;
+}
+
+/* Highlight the current section */
+.wy-menu-vertical ul li.current > a {
+    font-weight: bold;
+    color: #3b75c6;
+}
