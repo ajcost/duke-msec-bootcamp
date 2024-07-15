@@ -30,7 +30,9 @@ jobs:
           source /usr/share/miniconda/etc/profile.d/conda.sh
           conda activate duke-msec-bootcamp
           sphinx-build --version
-          sphinx-build -M html docs/source/ docs/build/
+          cd ./docs
+          make clean
+          make html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
