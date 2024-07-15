@@ -6,7 +6,7 @@
 Duke University - MSEC - Coding Bootcamp Documentation - Adam J. Costarino
 =====================================
 
-Insert a brief description of the project here.s
+This is the documentation site for my work on the Vital Food Costs dataset for Duke Coding bootcamp.
 
 .. toctree::
    :maxdepth: 2
